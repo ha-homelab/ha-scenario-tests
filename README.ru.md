@@ -1,0 +1,42 @@
+# HA Scenario Tests
+
+[English](README.md) · [Deutsch](README.de.md) · [Español](README.es.md)
+
+Синтетические домашние сценарии исполняются **настоящим движком автоматизаций и скриптов Home Assistant 2026.10.0**. Проверяются точный порядок команд, запрещённые команды и итоговые состояния. URL, токен и конфигурация действующего HA не принимаются.
+
+Сначала прочитайте [протокол проверки](docs/validation.ru.md): полный runtime — условие релиза; там описана локальная ошибка завершения native-кода.
+
+Это ранний инструмент с ограниченным форматом. Он не импортирует произвольный YAML, не симулирует физические устройства и не заменяет испытание оборудования. Время настоящее: тестовые 120 мс не доказывают поведение производственного таймера на 20 минут.
+
+![Синтетическая временная шкала](docs/images/timeline.svg)
+
+## Установка
+
+Нужен Python 3.14.2–3.14.x. Установка скачивает зависимости; выполнение не требует сети.
+
+```sh
+python3.14 -m venv .venv
+.venv/bin/python -m pip install --require-hashes -r requirements.lock
+.venv/bin/python -m pip install --no-deps .
+.venv/bin/ha-scenario --lang ru validate examples/presence_timeout.json
+.venv/bin/ha-scenario --lang ru run examples/stale_sensor.json --report result.json
+.venv/bin/python -m pytest -q --junitxml=junit.xml
+```
+
+Коды выхода: 0 — успешно, 1 — нарушено ожидание, 2 — ошибка ввода или среды. Отчёт создаётся только в новом файле. Ключи JSON не переводятся; сообщения и справка CLI доступны на четырёх языках.
+
+## Как устроено
+
+Каждый сценарий создаёт отдельный процесс Python `-I` и временную конфигурацию HA. Входной формат разрешает только синтетические состояния `*.scenario_*`, state/event triggers, state conditions и несколько команд встроенных тестовых исполнителей. Настоящий `automation.reload` перечитывает временный файл. Физические устройства не подключаются.
+
+Общий audit guard процесса блокирует сетевые подключения, bind, DNS, отправку datagram и создание subprocess. Это защита от случайного I/O, **не песочница ОС**: зависимости являются доверенным кодом. Контейнер с `--network none` даёт отдельную сетевую границу; его использование описано в инструкции.
+
+Четыре примера: присутствие и таймер отсутствия, ручной запрет повторного включения, пропавший датчик, reload с восстановлением состояния. Pytest fixture `scenario_runner` возвращает отчёт и не пропускает тест при отсутствии HA.
+
+- [Установка и изоляция](docs/install.ru.md)
+- [Формат сценариев](docs/scenarios.ru.md)
+- [Диагностика](docs/troubleshooting.ru.md)
+- [Ограничения и доказательства](docs/limits.ru.md)
+- [Wiki](wiki/Home.ru.md)
+
+Семантикой автоматизаций владеет HA. Для разработки произвольной custom integration используйте [pytest-homeassistant-custom-component](https://github.com/MatthewFlamm/pytest-homeassistant-custom-component); для датасетов домов — [Synthetic Home](https://github.com/allenporter/home-assistant-synthetic-home). Лицензия MIT. Реальные планы дома, токены и история присутствия в репозитории отсутствуют.

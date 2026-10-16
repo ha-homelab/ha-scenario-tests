@@ -1,0 +1,6 @@
+- [English home](Home.md)
+- [Русская wiki](Home.ru.md)
+- [Install](../docs/install.md) / [Установка](../docs/install.ru.md)
+- [Scenarios](../docs/scenarios.md) / [Сценарии](../docs/scenarios.ru.md)
+- [Troubleshooting](../docs/troubleshooting.md) / [Диагностика](../docs/troubleshooting.ru.md)
+- [Limits](../docs/limits.md) / [Ограничения](../docs/limits.ru.md)

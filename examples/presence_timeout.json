@@ -1,0 +1,137 @@
+{
+  "schema": "ha-scenario/v1",
+  "name": "presence_timeout",
+  "seed": {
+    "light.scenario_lamp": "off",
+    "binary_sensor.scenario_presence": "off",
+    "input_boolean.scenario_hold": "off"
+  },
+  "automations": [
+    {
+      "id": "arrive",
+      "triggers": [
+        {
+          "trigger": "state",
+          "entity_id": "binary_sensor.scenario_presence",
+          "to": "on"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "state",
+          "entity_id": "input_boolean.scenario_hold",
+          "state": "off"
+        }
+      ],
+      "actions": [
+        {
+          "action": "light.turn_on",
+          "entity_id": "light.scenario_lamp"
+        }
+      ]
+    },
+    {
+      "id": "leave",
+      "triggers": [
+        {
+          "trigger": "state",
+          "entity_id": "binary_sensor.scenario_presence",
+          "to": "off",
+          "for_seconds": 0.12
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "state",
+          "entity_id": "input_boolean.scenario_hold",
+          "state": "off"
+        }
+      ],
+      "actions": [
+        {
+          "action": "light.turn_off",
+          "entity_id": "light.scenario_lamp"
+        }
+      ]
+    },
+    {
+      "id": "manual",
+      "triggers": [
+        {
+          "trigger": "event",
+          "event_type": "scenario_manual_off"
+        }
+      ],
+      "actions": [
+        {
+          "action": "input_boolean.turn_on",
+          "entity_id": "input_boolean.scenario_hold"
+        },
+        {
+          "action": "light.turn_off",
+          "entity_id": "light.scenario_lamp"
+        }
+      ]
+    },
+    {
+      "id": "reload_reconcile",
+      "triggers": [
+        {
+          "trigger": "event",
+          "event_type": "automation_reloaded"
+        }
+      ],
+      "conditions": [
+        {
+          "condition": "state",
+          "entity_id": "binary_sensor.scenario_presence",
+          "state": "on"
+        },
+        {
+          "condition": "state",
+          "entity_id": "input_boolean.scenario_hold",
+          "state": "off"
+        }
+      ],
+      "actions": [
+        {
+          "action": "light.turn_on",
+          "entity_id": "light.scenario_lamp"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "after": 0.04,
+      "set": {
+        "entity_id": "binary_sensor.scenario_presence",
+        "state": "on"
+      }
+    },
+    {
+      "after": 0.04,
+      "set": {
+        "entity_id": "binary_sensor.scenario_presence",
+        "state": "off"
+      }
+    }
+  ],
+  "settle_seconds": 0.22,
+  "expect": {
+    "calls": [
+      {
+        "action": "light.turn_on",
+        "entity_id": "light.scenario_lamp"
+      },
+      {
+        "action": "light.turn_off",
+        "entity_id": "light.scenario_lamp"
+      }
+    ],
+    "states": {
+      "light.scenario_lamp": "off"
+    },
+    "forbidden": []
+  }
+}
