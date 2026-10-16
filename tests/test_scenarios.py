@@ -9,10 +9,39 @@ import pytest
 
 from ha_scenario_tests import runner
 from ha_scenario_tests.i18n import MESSAGES
+from ha_scenario_tests.report import validate_report
 from ha_scenario_tests.runner import run_scenario
 from ha_scenario_tests.schema import InvalidScenario, load, validate
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def synthetic_success_report(document):
+    """Protocol fixture only: this is never a claim that HA executed."""
+    return {
+        "schema": "ha-scenario-report/v1",
+        "name": document["name"],
+        "passed": True,
+        "failures": [],
+        "ha_version": "2026.10.0",
+        "clock": "elapsed_monotonic",
+        "physical_validation": False,
+        "isolation": "fresh_worker_temp_config_python_audit_guard",
+        "calls": [
+            dict(call, elapsed_seconds=(i + 1) / 10)
+            for i, call in enumerate(document["expect"]["calls"])
+        ],
+        "states": {**document["seed"], **document["expect"].get("states", {})},
+        "timeline": [
+            {
+                "operation": next(key for key in ("set", "event", "reload") if key in step),
+                "elapsed_seconds": (i + 1) / 10,
+            }
+            for i, step in enumerate(document["timeline"])
+        ],
+        "blocked_io": [],
+        "components": ["automation", "blueprint", "trace"],
+    }
 
 
 @pytest.mark.parametrize("path", sorted((ROOT / "examples").glob("*.json")), ids=lambda p: p.stem)
@@ -114,6 +143,24 @@ for f in calls:
     except RuntimeError: pass
     else: raise AssertionError("I/O was not blocked")
 assert len(v) == len(calls), v
+"""
+    result = subprocess.run([sys.executable, "-I", "-c", code], capture_output=True, text=True)
+    assert result.returncode == 0, result.stderr
+
+
+def test_interface_library_import_uses_loaded_libc_without_subprocess():
+    code = """
+import ctypes.util
+from ha_scenario_tests.isolation import install_guard
+from ha_scenario_tests.worker import prime_interface_library
+original = ctypes.util.find_library
+violations = install_guard()
+prime_interface_library()
+import ifaddr._posix
+assert ifaddr._posix.libc._name is None
+assert ifaddr._posix.libc.getifaddrs
+assert ctypes.util.find_library is original
+assert not violations
 """
     result = subprocess.run([sys.executable, "-I", "-c", code], capture_output=True, text=True)
     assert result.returncode == 0, result.stderr
@@ -232,7 +279,10 @@ def test_linux_worker_environment_does_not_inherit_credentials_or_library_path(
 
     def child(args, **kwargs):
         captured.update(kwargs["env"])
-        return subprocess.CompletedProcess(args, 0, '{"passed": true}', "")
+        document = json.loads(kwargs["input"])
+        return subprocess.CompletedProcess(
+            args, 0, json.dumps(synthetic_success_report(document)), ""
+        )
 
     monkeypatch.setenv("LD_LIBRARY_PATH", "/untrusted/synthetic/library")
     monkeypatch.setenv("SYNTHETIC_PRIVATE_KEY", "not-a-real-secret")
@@ -253,6 +303,38 @@ def test_success_payload_before_native_crash_is_rejected(monkeypatch):
     )
     with pytest.raises(RuntimeError, match="native_signal"):
         run_scenario(load(ROOT / "examples/presence_timeout.json"))
+
+
+@pytest.mark.parametrize(
+    "mutate",
+    [
+        lambda r: r.update(passed="false"),
+        lambda r: r.update(passed=1),
+        lambda r: r.update(physical_validation=0),
+        lambda r: r.update(physical_validation=True),
+        lambda r: r.update(ha_version="other"),
+        lambda r: r.update(clock="virtual"),
+        lambda r: r.pop("states"),
+        lambda r: r.update(calls=[]),
+        lambda r: r.update(components=["automation", "esphome", "trace"]),
+        lambda r: r["calls"][0].update(elapsed_seconds=float("nan")),
+        lambda r: r["states"].update({"light.unseeded": "on"}),
+        lambda r: r.update(blocked_io=["socket.connect"]),
+        lambda r: r.update(failures=["calls_mismatch"]),
+    ],
+)
+def test_malformed_success_worker_report_rejected(mutate, monkeypatch):
+    document = load(ROOT / "examples/presence_timeout.json")
+    report = synthetic_success_report(document)
+    assert validate_report(report, document) == report
+    mutate(report)
+    monkeypatch.setattr(
+        runner.subprocess,
+        "run",
+        lambda args, **kwargs: subprocess.CompletedProcess(args, 0, json.dumps(report), ""),
+    )
+    with pytest.raises(RuntimeError, match="invalid worker report"):
+        run_scenario(document)
 
 
 def test_svg_regeneration_is_deterministic():

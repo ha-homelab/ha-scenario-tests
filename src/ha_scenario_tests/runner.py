@@ -6,7 +6,8 @@ import subprocess
 import sys
 import sysconfig
 
-from .schema import validate
+from .report import validate_report
+from .schema import unique_pairs, validate
 
 
 def run_scenario(document):
@@ -42,7 +43,9 @@ def run_scenario(document):
             category = "native_signal"
         raise RuntimeError(f"scenario worker failed (exit {proc.returncode}, {category})")
     try:
-        report = json.loads(proc.stdout)
-    except json.JSONDecodeError as exc:
+        if len(proc.stdout.encode("utf-8")) > 1048576:
+            raise ValueError("report too large")
+        report = json.loads(proc.stdout, object_pairs_hook=unique_pairs)
+        return validate_report(report, document)
+    except (ValueError, RecursionError) as exc:
         raise RuntimeError("invalid worker report") from exc
-    return report

@@ -19,6 +19,26 @@ from .schema import ACTIONS, MAX_BYTES, ha_config, unique_pairs, validate
 HA_VERSION = "2026.10.0"
 
 
+def prime_interface_library():
+    """Import ifaddr using libc already loaded in this process, without ldconfig."""
+    import ctypes.util
+    import importlib
+
+    original = ctypes.util.find_library
+
+    def process_library(name):
+        if name != "c":
+            raise RuntimeError("unexpected interface library request")
+        # ctypes.CDLL(None) resolves symbols from the existing process namespace.
+        return None
+
+    try:
+        ctypes.util.find_library = process_library
+        importlib.import_module("ifaddr")
+    finally:
+        ctypes.util.find_library = original
+
+
 async def execute(document, violations):
     from homeassistant import loader
     from homeassistant.bootstrap import async_load_base_functionality
@@ -160,6 +180,8 @@ def main():
     violations = install_guard()
     with contextlib.redirect_stdout(io.StringIO()), contextlib.redirect_stderr(io.StringIO()):
         try:
+            if sys.platform == "linux":
+                prime_interface_library()
             report = loop.run_until_complete(asyncio.wait_for(execute(document, violations), 20))
             loop.run_until_complete(loop.shutdown_asyncgens())
             loop.run_until_complete(loop.shutdown_default_executor())

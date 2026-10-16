@@ -2,7 +2,7 @@
 
 ## 2026-10-15 development checks
 
-The source, strict input admission, Python audit guard, CLI translations and SVG regeneration were checked locally with Python 3.14.7 on macOS arm64. `python -m pytest -q -m 'not runtime'` passed **33 tests**; seven real-HA cases are explicitly excluded by that command. `python -m ruff check src tests scripts` passed. This is not a substitute for the full runtime suite.
+The source, strict input admission, Python audit guard, CLI translations and SVG regeneration were checked locally with Python 3.14.7 on macOS arm64. `python -m pytest -q -m 'not runtime'` passed **47 tests**; seven real-HA cases are explicitly excluded by that command. `python -m ruff check src tests scripts` passed. This is not a substitute for the full runtime suite.
 
 The actual Home Assistant 2026.10.0 engine loaded `automation`, `blueprint` and `trace` and executed the presence timeout and manual override scenarios with expected synthetic service calls, final states and no blocked I/O. The local Python process then exited with a native segmentation fault during interpreter teardown. The parent runner correctly treats that nonzero exit as a runtime failure, even when a successful JSON payload preceded it. **A complete passing macOS runtime test is not claimed.**
 
@@ -10,7 +10,7 @@ The full Linux CI suite is required before a release is accepted. Run `python -m
 
 ## Controlled bootstrap metadata
 
-The worker supplies the synthetic value `synthetic` for Python's cached processor metadata and disables `socket.has_ipv6` before importing HA. This prevents HA's platform initialization from spawning `uname -p`, and prevents urllib3's import-time localhost IPv6 bind probe. The I/O guard has no allow-list exception for either operation. These changes affect host metadata/probing only; HA triggers, conditions, timers, reload, scripts and service dispatch are real. They are version-sensitive and covered by the pinned runtime suite.
+The worker supplies the synthetic value `synthetic` for Python's cached processor metadata and disables `socket.has_ipv6` before importing HA. This prevents HA's platform initialization from spawning `uname -p`, and prevents urllib3's import-time localhost IPv6 bind probe. On Linux, ifaddr is imported under the guard using `ctypes.CDLL(None)`, resolving libc symbols already loaded in the process; this avoids the library-finder's `ldconfig` subprocess. The ordinary library finder is immediately restored. The I/O guard has no allow-list exception for these operations. These changes affect host metadata/probing only; HA triggers, conditions, timers, reload, scripts and service dispatch are real. They are version-sensitive and covered by the pinned runtime suite.
 
 ## Reproduce
 

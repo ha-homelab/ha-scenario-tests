@@ -18,4 +18,6 @@ Other operations: `"event": "scenario_manual_off"`, or `"reload": true`. Reload 
 
 Limits: 64 seed entities, 16 automations, 8 triggers and 8 conditions per automation, 16 actions per automation, 32 timeline steps, 5 seconds total requested waits, 256 captured calls. Background task errors and blocked I/O fail the run. The report includes monotonic elapsed call/step times, loaded components, final states and failure codes.
 
+The parent validates the complete worker report before returning it. `passed` must be an actual Boolean, `physical_validation` must be false, and schema, HA version, scenario name, fields and bounds must match the protocol. The parent also checks call/state assertions against the scenario rather than trusting a success flag. Invalid output and any nonzero worker exit are runtime errors, even if the child printed a success-looking JSON object.
+
 The supplied stale example represents transport loss by `unavailable`. It does not infer source freshness from `last_changed`, test sensor timestamp parsing or prove real sensor expiry behavior. The manual override is an explicit synthetic policy; the tool does not add that policy to an existing automation.
