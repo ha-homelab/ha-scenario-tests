@@ -7,6 +7,7 @@ from pathlib import Path
 
 import pytest
 
+from ha_scenario_tests import runner
 from ha_scenario_tests.i18n import MESSAGES
 from ha_scenario_tests.runner import run_scenario
 from ha_scenario_tests.schema import InvalidScenario, load, validate
@@ -35,6 +36,16 @@ def test_wrong_expectation_and_forbidden_action_fail(scenario_runner):
     assert not report["passed"]
     assert "calls_mismatch" in report["failures"]
     assert "forbidden_call" in report["failures"]
+
+
+@pytest.mark.runtime
+def test_downstream_role_transfer_contract(scenario_runner):
+    """A renamed role must not dispatch a command to the retired synthetic plug."""
+    report = scenario_runner(load(ROOT / "tests/fixtures/role_transfer.json"))
+    assert report["passed"], report
+    assert not report["blocked_io"]
+    assert report["states"]["switch.scenario_table"] == "off"
+    assert report["states"]["switch.scenario_retired_plug"] == "on"
 
 
 @pytest.mark.parametrize(
@@ -211,6 +222,36 @@ def test_timeout_is_a_runtime_error(monkeypatch):
 
     monkeypatch.setattr(subprocess, "run", timeout)
     with pytest.raises(RuntimeError, match="timed out"):
+        run_scenario(load(ROOT / "examples/presence_timeout.json"))
+
+
+def test_linux_worker_environment_does_not_inherit_credentials_or_library_path(
+    monkeypatch, tmp_path
+):
+    captured = {}
+
+    def child(args, **kwargs):
+        captured.update(kwargs["env"])
+        return subprocess.CompletedProcess(args, 0, '{"passed": true}', "")
+
+    monkeypatch.setenv("LD_LIBRARY_PATH", "/untrusted/synthetic/library")
+    monkeypatch.setenv("SYNTHETIC_PRIVATE_KEY", "not-a-real-secret")
+    monkeypatch.setattr(runner.sys, "platform", "linux")
+    monkeypatch.setattr(runner.sysconfig, "get_config_var", lambda name: str(tmp_path))
+    monkeypatch.setattr(runner.subprocess, "run", child)
+    run_scenario(load(ROOT / "examples/presence_timeout.json"))
+    assert captured["LD_LIBRARY_PATH"] == str(tmp_path)
+    assert "SYNTHETIC_PRIVATE_KEY" not in captured
+    assert "PYTHONPATH" not in captured
+
+
+def test_success_payload_before_native_crash_is_rejected(monkeypatch):
+    monkeypatch.setattr(
+        runner.subprocess,
+        "run",
+        lambda args, **kwargs: subprocess.CompletedProcess(args, -11, '{"passed": true}', ""),
+    )
+    with pytest.raises(RuntimeError, match="native_signal"):
         run_scenario(load(ROOT / "examples/presence_timeout.json"))
 
 
