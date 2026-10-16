@@ -1,5 +1,7 @@
 # HA Scenario Tests
 
+[![OpenSSF Best Practices](https://www.bestpractices.dev/projects/15567/badge)](https://www.bestpractices.dev/projects/15567)
+
 [Русский](README.ru.md) · [Deutsch](README.de.md) · [Español](README.es.md)
 
 Run bounded, synthetic household scenarios in the **real Home Assistant 2026.10.0 automation and script engine**. Assert the exact ordered service calls, forbidden calls and final synthetic states. There is no Home Assistant URL, token, device connection or production config input.
@@ -64,3 +66,10 @@ The function returns a serializable report; pytest supplies JUnit via `--junitxm
 Home Assistant owns automation semantics. The initial fixture approach was informed by the real-runtime tests in [ha-homelab/home-assistant](https://github.com/ha-homelab/home-assistant/blob/main/tests/test_living_room_presence.py). No household configuration was copied. [pytest-homeassistant-custom-component](https://github.com/MatthewFlamm/pytest-homeassistant-custom-component) provides broader integration-test fixtures; use it when testing a custom integration. [Synthetic Home](https://github.com/allenporter/home-assistant-synthetic-home) provides synthetic home datasets and test tooling. This project adds a small bounded timeline/side-effect contract rather than replacing either project.
 
 MIT licensed. All bundled entities, events, illustrations and reports are synthetic.
+
+## Project maintenance
+
+See [Contributing](CONTRIBUTING.md), [Security](SECURITY.md),
+[Governance](GOVERNANCE.md), [Code of Conduct](CODE_OF_CONDUCT.md),
+[Roadmap](ROADMAP.md), [Source releases](RELEASING.md), and
+[Quality evidence](docs/quality.md).
