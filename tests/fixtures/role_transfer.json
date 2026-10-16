@@ -1,0 +1,50 @@
+{
+  "schema": "ha-scenario/v1",
+  "name": "reviewed_role_transfer",
+  "seed": {
+    "switch.scenario_table": "on",
+    "switch.scenario_retired_plug": "on"
+  },
+  "automations": [
+    {
+      "id": "table_off",
+      "triggers": [
+        {
+          "trigger": "event",
+          "event_type": "scenario_table_off"
+        }
+      ],
+      "actions": [
+        {
+          "action": "switch.turn_off",
+          "entity_id": "switch.scenario_table"
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "after": 0.04,
+      "event": "scenario_table_off"
+    }
+  ],
+  "settle_seconds": 0.1,
+  "expect": {
+    "calls": [
+      {
+        "action": "switch.turn_off",
+        "entity_id": "switch.scenario_table"
+      }
+    ],
+    "states": {
+      "switch.scenario_table": "off",
+      "switch.scenario_retired_plug": "on"
+    },
+    "forbidden": [
+      {
+        "action": "switch.turn_off",
+        "entity_id": "switch.scenario_retired_plug"
+      }
+    ]
+  }
+}

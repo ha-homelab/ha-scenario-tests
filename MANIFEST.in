@@ -1,0 +1,7 @@
+include README*.md LICENSE CHANGELOG.md SECURITY.md CONTRIBUTING.md version requirements.lock Dockerfile
+recursive-include docs *.md *.svg
+recursive-include wiki *.md
+recursive-include examples *.json
+recursive-include tests *.py *.json
+recursive-include scripts *.py
+recursive-include tools *.py

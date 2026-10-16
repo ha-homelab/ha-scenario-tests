@@ -1,0 +1,6 @@
+- [English home](https://github.com/ha-homelab/ha-scenario-tests/wiki/Home)
+- [Русская wiki](https://github.com/ha-homelab/ha-scenario-tests/wiki/Home.ru)
+- [Install](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.md) / [Установка](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.ru.md)
+- [Scenarios](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.md) / [Сценарии](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.ru.md)
+- [Troubleshooting](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.md) / [Диагностика](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.ru.md)
+- [Limits](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.md) / [Ограничения](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.ru.md)
