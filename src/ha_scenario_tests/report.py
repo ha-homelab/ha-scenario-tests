@@ -4,6 +4,7 @@ import math
 
 from .isolation import BLOCKED
 from .schema import action, obj, seq, state
+from .versions import HA_VERSION
 
 FIELDS = {
     "schema",
@@ -46,7 +47,7 @@ def validate_report(report, document):
     expected = {
         "schema": "ha-scenario-report/v1",
         "name": document["name"],
-        "ha_version": "2026.10.0",
+        "ha_version": HA_VERSION,
         "clock": "elapsed_monotonic",
         "isolation": "fresh_worker_temp_config_python_audit_guard",
     }

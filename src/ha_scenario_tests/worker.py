@@ -15,8 +15,7 @@ from pathlib import Path
 
 from .isolation import install_guard
 from .schema import ACTIONS, MAX_BYTES, ha_config, unique_pairs, validate
-
-HA_VERSION = "2026.10.0"
+from .versions import HA_VERSION
 
 
 def prime_interface_library():

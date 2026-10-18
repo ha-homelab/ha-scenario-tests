@@ -2,7 +2,7 @@
 
 [English](README.md) · [Русский](README.ru.md) · [Deutsch](README.de.md)
 
-Ejecuta escenarios sintéticos limitados en el **motor real de automatizaciones y scripts de Home Assistant 2026.10.0**. Comprueba el orden exacto de acciones, las acciones prohibidas y los estados finales. No acepta direcciones, tokens ni configuraciones de una instalación real de HA.
+Ejecuta escenarios sintéticos limitados en el **motor real de automatizaciones y scripts de Home Assistant 2026.10.1**. Comprueba el orden exacto de acciones, las acciones prohibidas y los estados finales. No acepta direcciones, tokens ni configuraciones de una instalación real de HA.
 
 Antes de usarlo, consulte el [registro de validación](docs/validation.md): las pruebas completas son un requisito de publicación; allí se documenta un fallo nativo local al finalizar el proceso.
 

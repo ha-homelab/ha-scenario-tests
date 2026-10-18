@@ -2,7 +2,7 @@
 
 [English](README.md) · [Русский](README.ru.md) · [Español](README.es.md)
 
-Begrenzte synthetische Szenarien laufen in der **echten Automations- und Skript-Engine von Home Assistant 2026.10.0**. Geprüft werden die genaue Reihenfolge der Dienstaufrufe, verbotene Aufrufe und Endzustände. Das Programm akzeptiert keine HA-Adresse, Zugangsdaten oder produktive Konfiguration.
+Begrenzte synthetische Szenarien laufen in der **echten Automations- und Skript-Engine von Home Assistant 2026.10.1**. Geprüft werden die genaue Reihenfolge der Dienstaufrufe, verbotene Aufrufe und Endzustände. Das Programm akzeptiert keine HA-Adresse, Zugangsdaten oder produktive Konfiguration.
 
 Vor dem Einsatz den [Validierungsbericht](docs/validation.md) lesen: Vollständige Laufzeittests sind Voraussetzung für eine Veröffentlichung; ein lokaler nativer Absturz beim Beenden ist dort dokumentiert.
 
