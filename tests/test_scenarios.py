@@ -3,6 +3,7 @@ import json
 import os
 import subprocess
 import sys
+import tomllib
 from pathlib import Path
 
 import pytest
@@ -12,6 +13,7 @@ from ha_scenario_tests.i18n import MESSAGES
 from ha_scenario_tests.report import validate_report
 from ha_scenario_tests.runner import run_scenario
 from ha_scenario_tests.schema import InvalidScenario, load, validate
+from ha_scenario_tests.versions import HA_VERSION
 
 ROOT = Path(__file__).resolve().parents[1]
 
@@ -23,7 +25,7 @@ def synthetic_success_report(document):
         "name": document["name"],
         "passed": True,
         "failures": [],
-        "ha_version": "2026.10.0",
+        "ha_version": "2026.10.1",
         "clock": "elapsed_monotonic",
         "physical_validation": False,
         "isolation": "fresh_worker_temp_config_python_audit_guard",
@@ -49,7 +51,7 @@ def synthetic_success_report(document):
 def test_real_ha_scenario(path, scenario_runner):
     report = scenario_runner(load(path))
     assert report["passed"], report
-    assert report["ha_version"] == "2026.10.0"
+    assert report["ha_version"] == "2026.10.1"
     assert report["physical_validation"] is False
     assert not report["blocked_io"]
     assert "automation" in report["components"]
@@ -313,6 +315,7 @@ def test_success_payload_before_native_crash_is_rejected(monkeypatch):
         lambda r: r.update(physical_validation=0),
         lambda r: r.update(physical_validation=True),
         lambda r: r.update(ha_version="other"),
+        lambda r: r.update(ha_version="2026.10.0"),
         lambda r: r.update(clock="virtual"),
         lambda r: r.pop("states"),
         lambda r: r.update(calls=[]),
@@ -342,3 +345,8 @@ def test_svg_regeneration_is_deterministic():
     before = [path.read_bytes() for path in assets]
     subprocess.run([sys.executable, str(ROOT / "scripts/render_diagrams.py")], check=True)
     assert before == [path.read_bytes() for path in assets]
+
+
+def test_worker_protocol_version_matches_declared_runtime():
+    project = tomllib.loads((ROOT / "pyproject.toml").read_text())
+    assert f"homeassistant=={HA_VERSION}" in project["project"]["dependencies"]
