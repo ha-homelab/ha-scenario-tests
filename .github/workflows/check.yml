@@ -14,7 +14,7 @@ jobs:
   check:
     needs: scope
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
     steps:
       - name: Harden the runner (Audit all outbound calls)
         uses: step-security/harden-runner@ccd8616d44fd3846e67624a50d5aad6d37bf2d25 # v2.22.1
@@ -38,6 +38,11 @@ jobs:
           python3 -m pytest -q
           python3 tools/check_docs.py
           python3 -m build --outdir "$RUNNER_TEMP/dist"
+      - name: Build and exercise the packaged runtime
+        run: |
+          docker build --tag ha-scenario-ci .
+          docker run --rm --network none --read-only --tmpfs /tmp:rw \
+            --cap-drop ALL --security-opt no-new-privileges ha-scenario-ci
       - name: Diagnose pinned runtime with synthetic input only
         if: failure()
         run: python3 -X faulthandler -I -m ha_scenario_tests.worker < examples/presence_timeout.json
