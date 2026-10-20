@@ -1,5 +1,6 @@
 """Regression: CI must not test an old HA after a metadata-only update."""
 import pytest
+
 from tools.check_lock import check
 
 

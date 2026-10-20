@@ -1,5 +1,7 @@
 # HA Scenario Tests
 
+**Beta 0.1.1b1:** Vorabversion zur Softwareprüfung; sie setzt keine Abnahme physischer Geräte voraus.
+
 [English](README.md) · [Русский](README.ru.md) · [Español](README.es.md)
 
 Begrenzte synthetische Szenarien laufen in der **echten Automations- und Skript-Engine von Home Assistant 2026.10.1**. Geprüft werden die genaue Reihenfolge der Dienstaufrufe, verbotene Aufrufe und Endzustände. Das Programm akzeptiert keine HA-Adresse, Zugangsdaten oder produktive Konfiguration.
