@@ -1,5 +1,7 @@
 # HA Scenario Tests
 
+**Beta 0.1.1b1:** versión preliminar para evaluar el software; no implica la aceptación de dispositivos físicos.
+
 [English](README.md) · [Русский](README.ru.md) · [Deutsch](README.de.md)
 
 Ejecuta escenarios sintéticos limitados en el **motor real de automatizaciones y scripts de Home Assistant 2026.10.1**. Comprueba el orden exacto de acciones, las acciones prohibidas y los estados finales. No acepta direcciones, tokens ni configuraciones de una instalación real de HA.

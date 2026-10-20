@@ -1,5 +1,7 @@
 # HA Scenario Tests
 
+**Beta 0.1.1b1:** prerelease for software evaluation; physical device acceptance is not implied.
+
 [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/15567/badge)](https://www.bestpractices.dev/projects/15567)
 
 [Русский](README.ru.md) · [Deutsch](README.de.md) · [Español](README.es.md)
