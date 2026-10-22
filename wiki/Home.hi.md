@@ -31,6 +31,6 @@
 
 रिपॉज़िटरी में रखी इस विकी का संस्करण सॉफ़्टवेयर के साथ चलता है; GitHub विकी पर प्रकाशित करना अलग काम है।
 
-[स्थापना](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.md) से शुरू करें, फिर [परिदृश्य v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.md) पढ़ें। `examples/` की चार फ़ाइलें चलाएँ। सफल रिपोर्ट समझने से पहले [सीमाएँ](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.md) पढ़ें। सफलता वास्तविक HA इंजन द्वारा कृत्रिम सेवा प्रेषण बताती है, कभी भौतिक डिवाइस नहीं।
+[स्थापना](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.hi.md) से शुरू करें, फिर [परिदृश्य v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.hi.md) पढ़ें। `examples/` की चार फ़ाइलें चलाएँ। सफल रिपोर्ट समझने से पहले [सीमाएँ](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.hi.md) पढ़ें। सफलता वास्तविक HA इंजन द्वारा कृत्रिम सेवा प्रेषण बताती है, कभी भौतिक डिवाइस नहीं।
 
-[समस्या निवारण](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.md) · [सत्यापन](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.md)
+[समस्या निवारण](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.hi.md) · [सत्यापन](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.hi.md)

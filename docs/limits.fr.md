@@ -37,4 +37,4 @@ L’entrée ne contient ni modèles exécutables ni configuration d’intégrati
 
 Les rapports publics doivent contenir uniquement des fixtures synthétiques. Des chronologies d’états réels révèlent présence et habitudes même sans jeton. Aucun inventaire domestique, enregistrement ou configuration de production n’est inclus ici. Tous les diagrammes sont marqués synthétiques et reproductibles avec `python scripts/render_diagrams.py`.
 
-Consultez la [validation](validation.md) pour les contrôles mesurés réalisés sur cette version. La prise en charge de l’installation se limite aux environnements de ce dossier ; la recette du conteneur ne signifie pas que toutes les plateformes ont été testées.
+Consultez la [validation](validation.fr.md) pour les contrôles mesurés réalisés sur cette version. La prise en charge de l’installation se limite aux environnements de ce dossier ; la recette du conteneur ne signifie pas que toutes les plateformes ont été testées.

@@ -19,9 +19,10 @@ When changing a source guide:
 
 1. Update the complete text in all 23 translations, including Russian. Preserve
    requirements, examples, error conditions, historical evidence and limitations.
-2. Preserve fenced code, inline identifiers and link destinations exactly. Keep
-   translated headings and all steps and list items. The navigation links are
-   the only language-dependent destinations in these families.
+2. Preserve fenced code, inline identifiers and external link destinations exactly.
+   Links between translated families use the same language, including canonical
+   GitHub main-branch links to these guides. Keep fragment links and pinned
+   external references unchanged. Preserve translated headings, steps and lists.
 3. Keep the `language-navigation:start` / `language-navigation:end` block on every
    page. It must link to all entries in the catalog, including the current page.
 4. Update the source digest in [`translations.json`](translations.json) only

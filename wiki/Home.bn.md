@@ -31,6 +31,6 @@
 
 রিপোজিটরিতে রাখা এই উইকির সংস্করণ সফটওয়্যারের সঙ্গে নিয়ন্ত্রিত হয়; GitHub উইকিতে প্রকাশ করা আলাদা কাজ।
 
-[ইনস্টলেশন](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.md) দিয়ে শুরু করুন, তারপর [দৃশ্যপট v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.md)। `examples/`-এর চারটি ফাইল চালান। সফল রিপোর্টের ব্যাখ্যা করার আগে [সীমা](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.md) পড়ুন। সফলতা বাস্তব HA ইঞ্জিনের কৃত্রিম সার্ভিস প্রেরণ বোঝায়, কখনো ভৌত ডিভাইস নয়।
+[ইনস্টলেশন](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.bn.md) দিয়ে শুরু করুন, তারপর [দৃশ্যপট v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.bn.md)। `examples/`-এর চারটি ফাইল চালান। সফল রিপোর্টের ব্যাখ্যা করার আগে [সীমা](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.bn.md) পড়ুন। সফলতা বাস্তব HA ইঞ্জিনের কৃত্রিম সার্ভিস প্রেরণ বোঝায়, কখনো ভৌত ডিভাইস নয়।
 
-[সমস্যা সমাধান](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.md) · [যাচাই](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.md)
+[সমস্যা সমাধান](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.bn.md) · [যাচাই](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.bn.md)

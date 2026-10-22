@@ -31,6 +31,6 @@
 
 Tato wiki uložená v repozitáři se verzováním váže k softwaru; publikace do GitHub Wiki je samostatný úkon.
 
-Začněte [instalací](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.md), poté přejděte na [scénář v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.md). Spusťte čtyři soubory v `examples/`. Před interpretací úspěšné zprávy si přečtěte [omezení](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.md). Úspěch popisuje syntetické předávání službám skutečným enginem HA, nikdy fyzické zařízení.
+Začněte [instalací](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.cs.md), poté přejděte na [scénář v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.cs.md). Spusťte čtyři soubory v `examples/`. Před interpretací úspěšné zprávy si přečtěte [omezení](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.cs.md). Úspěch popisuje syntetické předávání službám skutečným enginem HA, nikdy fyzické zařízení.
 
-[Řešení problémů](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.md) · [Validace](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.md)
+[Řešení problémů](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.cs.md) · [Validace](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.cs.md)

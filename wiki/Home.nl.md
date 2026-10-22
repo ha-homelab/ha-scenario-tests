@@ -31,6 +31,6 @@
 
 Deze ingecheckte wiki wordt samen met de software geversioneerd; publicatie in een GitHub-wiki is een afzonderlijke handeling.
 
-Begin met de [installatie](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.md), gevolgd door [scenario v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.md). Voer de vier bestanden in `examples/` uit. Lees de [beperkingen](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.md) voordat u een geslaagd rapport interpreteert. Een geslaagde test beschrijft synthetische serviceafhandeling door een echte HA-engine, nooit een fysiek apparaat.
+Begin met de [installatie](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.nl.md), gevolgd door [scenario v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.nl.md). Voer de vier bestanden in `examples/` uit. Lees de [beperkingen](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.nl.md) voordat u een geslaagd rapport interpreteert. Een geslaagde test beschrijft synthetische serviceafhandeling door een echte HA-engine, nooit een fysiek apparaat.
 
-[Probleemoplossing](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.md) · [Validatie](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.md)
+[Probleemoplossing](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.nl.md) · [Validatie](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.nl.md)

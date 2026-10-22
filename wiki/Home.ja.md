@@ -31,6 +31,6 @@
 
 リポジトリに格納したこの wiki はソフトウェアとともにバージョン管理します。GitHub wiki への公開は別の操作です。
 
-[インストール](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.md)から始め、次に[シナリオ v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.md)を読んでください。`examples/` の 4 ファイルを実行します。合格レポートを解釈する前に[制限](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.md)を読んでください。合格は実際の HA エンジンによる合成サービスのディスパッチを表し、物理デバイスについては決して表しません。
+[インストール](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.ja.md)から始め、次に[シナリオ v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.ja.md)を読んでください。`examples/` の 4 ファイルを実行します。合格レポートを解釈する前に[制限](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.ja.md)を読んでください。合格は実際の HA エンジンによる合成サービスのディスパッチを表し、物理デバイスについては決して表しません。
 
-[トラブルシューティング](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.md) · [検証](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.md)
+[トラブルシューティング](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.ja.md) · [検証](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.ja.md)

@@ -31,6 +31,6 @@
 
 Depodaki bu wiki yazılımla birlikte sürümlenir; GitHub wiki'ye yayımlamak ayrı bir işlemdir.
 
-[Kurulumla](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.md) başlayın, sonra [senaryo v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.md) belgesine geçin. `examples/` içindeki dört dosyayı çalıştırın. Başarılı raporu yorumlamadan önce [sınırları](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.md) okuyun. Başarı gerçek HA motorunun sentetik servis dağıtımını açıklar, asla fiziksel cihazı değil.
+[Kurulumla](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.tr.md) başlayın, sonra [senaryo v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.tr.md) belgesine geçin. `examples/` içindeki dört dosyayı çalıştırın. Başarılı raporu yorumlamadan önce [sınırları](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.tr.md) okuyun. Başarı gerçek HA motorunun sentetik servis dağıtımını açıklar, asla fiziksel cihazı değil.
 
-[Sorun giderme](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.md) · [Doğrulama](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.md)
+[Sorun giderme](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.tr.md) · [Doğrulama](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.tr.md)

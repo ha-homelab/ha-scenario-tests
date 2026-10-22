@@ -34,8 +34,8 @@
 
 این ویکی در مخزن همراه نرم‌افزار نسخه‌بندی می‌شود؛ انتشار آن در ویکی GitHub عملی جداگانه است.
 
-با [نصب](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.md) شروع کنید، سپس [سناریو v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.md) را بخوانید. چهار فایل `examples/` را اجرا کنید. پیش از تفسیر گزارش موفق، [محدودیت‌ها](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.md) را بخوانید. موفقیت نشان‌دهندهٔ ارسال سرویس مصنوعی توسط موتور واقعی HA است، نه هرگز یک دستگاه فیزیکی.
+با [نصب](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.fa.md) شروع کنید، سپس [سناریو v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.fa.md) را بخوانید. چهار فایل `examples/` را اجرا کنید. پیش از تفسیر گزارش موفق، [محدودیت‌ها](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.fa.md) را بخوانید. موفقیت نشان‌دهندهٔ ارسال سرویس مصنوعی توسط موتور واقعی HA است، نه هرگز یک دستگاه فیزیکی.
 
-[عیب‌یابی](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.md) · [اعتبارسنجی](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.md)
+[عیب‌یابی](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.fa.md) · [اعتبارسنجی](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.fa.md)
 
 </div>

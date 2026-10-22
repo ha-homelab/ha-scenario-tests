@@ -37,4 +37,4 @@ Masukan tidak berisi templat yang dapat dieksekusi atau konfigurasi integrasi. S
 
 Laporan publik hanya boleh memuat fixture sintetis. Linimasa status nyata mengungkap keberadaan penghuni dan kebiasaan meskipun tanpa token. Tidak ada inventaris rumah tangga, rekaman, atau konfigurasi produksi yang disertakan di sini. Semua diagram diberi label sintetis dan dapat direproduksi dengan `python scripts/render_diagrams.py`.
 
-Lihat [validasi](validation.md) untuk pemeriksaan terukur yang dijalankan pada rilis ini. Dukungan instalasi terbatas pada lingkungan dalam catatan tersebut; resep kontainer tidak mengklaim bahwa setiap platform sudah diuji.
+Lihat [validasi](validation.id.md) untuk pemeriksaan terukur yang dijalankan pada rilis ini. Dukungan instalasi terbatas pada lingkungan dalam catatan tersebut; resep kontainer tidak mengklaim bahwa setiap platform sudah diuji.

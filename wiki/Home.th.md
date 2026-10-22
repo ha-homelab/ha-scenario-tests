@@ -31,6 +31,6 @@
 
 วิกิที่อยู่ในรีโพซิทอรีนี้ควบคุมเวอร์ชันไปพร้อมซอฟต์แวร์ การเผยแพร่ไปยังวิกิ GitHub เป็นอีกขั้นตอนหนึ่ง
 
-เริ่มจาก[การติดตั้ง](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.md) แล้วอ่าน[สถานการณ์ v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.md) รันสี่ไฟล์ใน `examples/` อ่าน[ขีดจำกัด](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.md) ก่อนแปลความรายงานที่ผ่าน ผลผ่านอธิบายการส่งบริการสังเคราะห์โดยเอนจิน HA จริง ไม่ใช่อุปกรณ์ทางกายภาพ
+เริ่มจาก[การติดตั้ง](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.th.md) แล้วอ่าน[สถานการณ์ v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.th.md) รันสี่ไฟล์ใน `examples/` อ่าน[ขีดจำกัด](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.th.md) ก่อนแปลความรายงานที่ผ่าน ผลผ่านอธิบายการส่งบริการสังเคราะห์โดยเอนจิน HA จริง ไม่ใช่อุปกรณ์ทางกายภาพ
 
-[การแก้ปัญหา](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.md) · [การตรวจสอบ](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.md)
+[การแก้ปัญหา](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.th.md) · [การตรวจสอบ](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.th.md)

@@ -37,4 +37,4 @@ Girdi çalıştırılabilir şablon veya entegrasyon yapılandırması içermez.
 
 Açık raporlar yalnızca sentetik fixture'lar içermelidir. Gerçek durum zaman çizelgeleri, token olmadan da evde bulunma durumunu ve alışkanlıkları açığa çıkarır. Burada ev envanteri, kayıt veya üretim yapılandırması bulunmaz. Tüm diyagramlar sentetik olarak işaretlenmiştir ve `python scripts/render_diagrams.py` ile yeniden üretilebilir.
 
-Bu sürümde gerçekleştirilen ölçülmüş kontroller için [doğrulamaya](validation.md) bakın. Kurulum desteği bu kayıttaki ortamlarla sınırlıdır; konteyner tarifi her platformun test edildiği anlamına gelmez.
+Bu sürümde gerçekleştirilen ölçülmüş kontroller için [doğrulamaya](validation.tr.md) bakın. Kurulum desteği bu kayıttaki ortamlarla sınırlıdır; konteyner tarifi her platformun test edildiği anlamına gelmez.

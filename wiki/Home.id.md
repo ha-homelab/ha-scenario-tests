@@ -31,6 +31,6 @@
 
 Wiki yang disimpan dalam repositori ini diberi versi bersama perangkat lunak; penerbitannya ke wiki GitHub merupakan operasi terpisah.
 
-Mulailah dengan [instalasi](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.md), lalu [skenario v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.md). Jalankan keempat berkas dalam `examples/`. Baca [batasan](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.md) sebelum menafsirkan laporan sukses. Hasil lulus menjelaskan pengiriman layanan sintetis oleh mesin HA nyata, bukan perangkat fisik.
+Mulailah dengan [instalasi](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.id.md), lalu [skenario v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.id.md). Jalankan keempat berkas dalam `examples/`. Baca [batasan](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.id.md) sebelum menafsirkan laporan sukses. Hasil lulus menjelaskan pengiriman layanan sintetis oleh mesin HA nyata, bukan perangkat fisik.
 
-[Pemecahan masalah](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.md) · [Validasi](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.md)
+[Pemecahan masalah](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.id.md) · [Validasi](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.id.md)

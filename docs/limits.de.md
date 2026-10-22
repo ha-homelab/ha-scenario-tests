@@ -37,4 +37,4 @@ Die Eingabe enthält keine ausführbaren Vorlagen oder Integrationskonfiguration
 
 Öffentliche Berichte dürfen nur synthetische Fixtures enthalten. Echte Zustandsverläufe verraten Anwesenheit und Gewohnheiten auch ohne Token. Hier sind weder Haushaltsinventar noch Aufzeichnungen oder produktive Konfiguration enthalten. Alle Diagramme sind als synthetisch gekennzeichnet und mit `python scripts/render_diagrams.py` reproduzierbar.
 
-Die gemessenen, für diese Version ausgeführten Prüfungen stehen unter [Validierung](validation.md). Die Installationsunterstützung beschränkt sich auf die dort genannten Umgebungen; die Containeranleitung behauptet nicht, dass jede Plattform getestet wurde.
+Die gemessenen, für diese Version ausgeführten Prüfungen stehen unter [Validierung](validation.de.md). Die Installationsunterstützung beschränkt sich auf die dort genannten Umgebungen; die Containeranleitung behauptet nicht, dass jede Plattform getestet wurde.

@@ -31,6 +31,6 @@
 
 本 wiki 随软件一起存入版本控制；发布到 GitHub wiki 是单独操作。
 
-先阅读[安装](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.md)，再阅读[场景 v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.md)。运行 `examples/` 中的四个文件。解读通过的报告前，请阅读[限制](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.md)。通过仅说明真实 HA 引擎的合成服务分发，绝不说明物理设备表现。
+先阅读[安装](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.zh-Hans.md)，再阅读[场景 v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.zh-Hans.md)。运行 `examples/` 中的四个文件。解读通过的报告前，请阅读[限制](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.zh-Hans.md)。通过仅说明真实 HA 引擎的合成服务分发，绝不说明物理设备表现。
 
-[故障排查](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.md) · [验证](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.md)
+[故障排查](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.zh-Hans.md) · [验证](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.zh-Hans.md)

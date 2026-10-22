@@ -37,4 +37,4 @@ Wejście nie zawiera wykonywalnych szablonów ani konfiguracji integracji. Każd
 
 Publiczne raporty powinny zawierać tylko syntetyczne fixture. Rzeczywiste osie czasu stanów ujawniają obecność i nawyki nawet bez tokenu. Nie ma tu domowego inwentarza, nagrań ani konfiguracji produkcyjnej. Wszystkie diagramy są oznaczone jako syntetyczne i odtwarzalne przez `python scripts/render_diagrams.py`.
 
-Zobacz [walidację](validation.md), aby sprawdzić zmierzone kontrole wykonane dla tej wersji. Obsługa instalacji ogranicza się do środowisk z tego protokołu; instrukcja kontenera nie oznacza, że przetestowano każdą platformę.
+Zobacz [walidację](validation.pl.md), aby sprawdzić zmierzone kontrole wykonane dla tej wersji. Obsługa instalacji ogranicza się do środowisk z tego protokołu; instrukcja kontenera nie oznacza, że przetestowano każdą platformę.

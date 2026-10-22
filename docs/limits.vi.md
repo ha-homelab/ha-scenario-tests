@@ -37,4 +37,4 @@ Bản phát hành này xác minh một tập con có giới hạn bằng trigger
 
 Báo cáo công khai chỉ nên chứa fixture tổng hợp. Dòng thời gian trạng thái thật tiết lộ việc có người ở nhà và thói quen ngay cả khi không có token. Ở đây không có danh sách thiết bị trong nhà, bản ghi hay cấu hình đang vận hành. Mọi sơ đồ đều được ghi rõ là tổng hợp và có thể tái tạo bằng `python scripts/render_diagrams.py`.
 
-Xem [xác minh](validation.md) để biết các kiểm tra đã đo trên bản phát hành này. Chỉ hỗ trợ cài đặt trong những môi trường có trong bản ghi đó; công thức container không có nghĩa mọi nền tảng đều đã được kiểm thử.
+Xem [xác minh](validation.vi.md) để biết các kiểm tra đã đo trên bản phát hành này. Chỉ hỗ trợ cài đặt trong những môi trường có trong bản ghi đó; công thức container không có nghĩa mọi nền tảng đều đã được kiểm thử.

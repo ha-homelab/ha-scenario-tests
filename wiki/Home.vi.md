@@ -31,6 +31,6 @@
 
 Wiki được lưu trong kho này có phiên bản cùng phần mềm; xuất bản lên wiki GitHub là thao tác riêng.
 
-Bắt đầu với [cài đặt](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.md), rồi [kịch bản v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.md). Chạy bốn tệp trong `examples/`. Đọc [giới hạn](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.md) trước khi diễn giải báo cáo đạt. Kết quả đạt mô tả điều phối dịch vụ tổng hợp bằng bộ máy HA thật, không bao giờ mô tả thiết bị vật lý.
+Bắt đầu với [cài đặt](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.vi.md), rồi [kịch bản v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.vi.md). Chạy bốn tệp trong `examples/`. Đọc [giới hạn](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.vi.md) trước khi diễn giải báo cáo đạt. Kết quả đạt mô tả điều phối dịch vụ tổng hợp bằng bộ máy HA thật, không bao giờ mô tả thiết bị vật lý.
 
-[Khắc phục sự cố](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.md) · [Xác minh](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.md)
+[Khắc phục sự cố](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.vi.md) · [Xác minh](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.vi.md)

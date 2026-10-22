@@ -37,4 +37,4 @@ De invoer bevat geen uitvoerbare sjablonen of integratieconfiguratie. Elke worke
 
 Openbare rapporten mogen alleen synthetische fixtures bevatten. Werkelijke toestandstijdlijnen onthullen aanwezigheid en gewoonten, ook zonder token. Hier zijn geen huishoudinventaris, opnamen of productieconfiguratie opgenomen. Alle diagrammen zijn als synthetisch gemarkeerd en reproduceerbaar met `python scripts/render_diagrams.py`.
 
-Zie [validatie](validation.md) voor de gemeten controles van deze versie. Installatieondersteuning beperkt zich tot de omgevingen in dat verslag; het containerrecept beweert niet dat elk platform is getest.
+Zie [validatie](validation.nl.md) voor de gemeten controles van deze versie. Installatieondersteuning beperkt zich tot de omgevingen in dat verslag; het containerrecept beweert niet dat elk platform is getest.

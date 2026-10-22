@@ -37,4 +37,4 @@ La entrada no contiene plantillas ejecutables ni configuración de integraciones
 
 Los informes públicos deben contener solo fixtures sintéticas. Las cronologías reales de estados revelan ocupación y hábitos incluso sin un token. Aquí no se incluyen inventarios domésticos, grabaciones ni configuración de producción. Todos los diagramas están etiquetados como sintéticos y se reproducen con `python scripts/render_diagrams.py`.
 
-Consulta la [validación](validation.md) para conocer las comprobaciones medidas realizadas sobre esta versión. La compatibilidad de instalación se limita a los entornos de ese registro; la receta del contenedor no afirma que se haya probado cada plataforma.
+Consulta la [validación](validation.es.md) para conocer las comprobaciones medidas realizadas sobre esta versión. La compatibilidad de instalación se limita a los entornos de ese registro; la receta del contenedor no afirma que se haya probado cada plataforma.

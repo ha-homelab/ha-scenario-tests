@@ -31,6 +31,6 @@
 
 Эта сохранённая в репозитории wiki версионируется вместе с программой; публикация в GitHub Wiki — отдельная операция.
 
-Начните с [установки](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.md), затем изучите [сценарий v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.md). Запустите четыре файла из `examples/`. Перед интерпретацией успешного отчёта прочитайте [ограничения](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.md). Успех описывает синтетическую диспетчеризацию сервисов настоящим движком HA, а не физическое устройство.
+Начните с [установки](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.ru.md), затем изучите [сценарий v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.ru.md). Запустите четыре файла из `examples/`. Перед интерпретацией успешного отчёта прочитайте [ограничения](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.ru.md). Успех описывает синтетическую диспетчеризацию сервисов настоящим движком HA, а не физическое устройство.
 
-[Диагностика](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.md) · [Проверки](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.md)
+[Диагностика](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.ru.md) · [Проверки](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.ru.md)

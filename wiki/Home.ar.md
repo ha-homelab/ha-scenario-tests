@@ -34,8 +34,8 @@
 
 تُحفظ هذه الويكي داخل المستودع وتُدار إصداراتها مع البرنامج؛ أما نشرها على ويكي GitHub فهو إجراء مستقل.
 
-ابدأ بـ[التثبيت](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.md)، ثم [السيناريو v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.md). شغّل الملفات الأربعة في `examples/`. اقرأ [الحدود](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.md) قبل تفسير تقرير ناجح. النجاح يصف إرسال خدمات اصطناعية بمحرك HA حقيقي، وليس جهازاً مادياً مطلقاً.
+ابدأ بـ[التثبيت](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.ar.md)، ثم [السيناريو v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.ar.md). شغّل الملفات الأربعة في `examples/`. اقرأ [الحدود](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.ar.md) قبل تفسير تقرير ناجح. النجاح يصف إرسال خدمات اصطناعية بمحرك HA حقيقي، وليس جهازاً مادياً مطلقاً.
 
-[استكشاف الأخطاء](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.md) · [التحقق](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.md)
+[استكشاف الأخطاء](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.ar.md) · [التحقق](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.ar.md)
 
 </div>

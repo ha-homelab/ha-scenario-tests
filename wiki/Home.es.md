@@ -31,6 +31,6 @@
 
 Este wiki guardado en el repositorio se versiona junto al software; publicarlo en un wiki de GitHub es una operación aparte.
 
-Empieza por la [instalación](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.md) y continúa con el [escenario v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.md). Ejecuta los cuatro archivos de `examples/`. Lee los [límites](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.md) antes de interpretar un informe satisfactorio. Un resultado exitoso describe el despacho sintético de servicios por un motor HA real, nunca un dispositivo físico.
+Empieza por la [instalación](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.es.md) y continúa con el [escenario v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.es.md). Ejecuta los cuatro archivos de `examples/`. Lee los [límites](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.es.md) antes de interpretar un informe satisfactorio. Un resultado exitoso describe el despacho sintético de servicios por un motor HA real, nunca un dispositivo físico.
 
-[Resolución de problemas](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.md) · [Validación](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.md)
+[Resolución de problemas](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.es.md) · [Validación](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.es.md)

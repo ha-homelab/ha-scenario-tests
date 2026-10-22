@@ -37,4 +37,4 @@ Vstup neobsahuje spustitelné šablony ani konfiguraci integrací. Každý worke
 
 Veřejné zprávy mají obsahovat pouze syntetické fixture. Skutečné časové průběhy stavů odhalují přítomnost a návyky i bez tokenu. Nejsou zde zahrnuty inventáře domácnosti, záznamy ani produkční konfigurace. Všechny diagramy jsou označené jako syntetické a reprodukovatelné pomocí `python scripts/render_diagrams.py`.
 
-Naměřené kontroly provedené u této verze uvádí [validace](validation.md). Podpora instalace se omezuje na prostředí v tomto záznamu; návod pro kontejner netvrdí, že byly testovány všechny platformy.
+Naměřené kontroly provedené u této verze uvádí [validace](validation.cs.md). Podpora instalace se omezuje na prostředí v tomto záznamu; návod pro kontejner netvrdí, že byly testovány všechny platformy.

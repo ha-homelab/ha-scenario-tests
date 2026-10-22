@@ -68,6 +68,25 @@ def localized(source, code):
     return source.with_name(source.stem + ("" if code == "en" else "." + code) + ".md")
 
 
+def translated_link(link, source, code):
+    """Keep readers in their language when a destination is a translated family."""
+    if code == "en" or "#" in link or "?" in link:
+        return link
+    prefix = "https://github.com/ha-homelab/ha-scenario-tests/blob/main/"
+    if link.startswith(prefix):
+        dest = root / link[len(prefix) :]
+    elif not link.startswith(("http:", "https:", "mailto:")):
+        dest = (source.parent / link).resolve()
+    else:
+        return link
+    if dest not in {root / item["source"] for item in manifest["families"]}:
+        return link
+    translated = localized(dest, code)
+    if link.startswith(prefix):
+        return prefix + str(translated.relative_to(root))
+    return str(Path(link).with_name(translated.name))
+
+
 def structure(text):
     prose = FENCE.sub("", text)
     return (
@@ -128,7 +147,9 @@ for family in manifest["families"]:
             re.findall(r"`([^`\n]+)`", original)
         ):
             errors.append(name + ": inline code differs from English")
-        if Counter(LINK.findall(translated)) != Counter(LINK.findall(original)):
+        if Counter(LINK.findall(translated)) != Counter(
+            translated_link(link, source, code) for link in LINK.findall(original)
+        ):
             errors.append(name + ": Markdown destinations differ from English")
         if structure(translated) != structure(original):
             errors.append(name + ": heading or list structure differs from English")

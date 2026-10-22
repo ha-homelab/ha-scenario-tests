@@ -34,8 +34,8 @@
 
 הוויקי שבמאגר מנוהל בגרסאות יחד עם התוכנה; פרסומו לוויקי של GitHub הוא פעולה נפרדת.
 
-התחילו ב[התקנה](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.md), ואז ב[תרחיש v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.md). הריצו את ארבעת הקבצים ב־`examples/`. קראו את [המגבלות](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.md) לפני פירוש דוח שעבר. מעבר מתאר שיגור שירותים סינתטי בידי מנוע HA אמיתי, ולעולם לא מכשיר פיזי.
+התחילו ב[התקנה](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.he.md), ואז ב[תרחיש v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.he.md). הריצו את ארבעת הקבצים ב־`examples/`. קראו את [המגבלות](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.he.md) לפני פירוש דוח שעבר. מעבר מתאר שיגור שירותים סינתטי בידי מנוע HA אמיתי, ולעולם לא מכשיר פיזי.
 
-[פתרון תקלות](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.md) · [אימות](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.md)
+[פתרון תקלות](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.he.md) · [אימות](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.he.md)
 
 </div>

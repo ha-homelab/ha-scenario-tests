@@ -37,4 +37,4 @@ L’ingresso non contiene template eseguibili o configurazioni di integrazione. 
 
 I rapporti pubblici devono contenere soltanto fixture sintetiche. Cronologie di stati reali rivelano presenza e abitudini anche senza token. Qui non sono inclusi inventari domestici, registrazioni o configurazioni di produzione. Tutti i diagrammi sono etichettati come sintetici e riproducibili con `python scripts/render_diagrams.py`.
 
-Consulta la [validazione](validation.md) per le verifiche misurate effettuate su questa versione. Il supporto all’installazione è limitato agli ambienti di quel registro; la ricetta del container non dichiara che ogni piattaforma sia stata testata.
+Consulta la [validazione](validation.it.md) per le verifiche misurate effettuate su questa versione. Il supporto all’installazione è limitato agli ambienti di quel registro; la ricetta del container non dichiara che ogni piattaforma sia stata testata.

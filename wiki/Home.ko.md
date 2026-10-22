@@ -31,6 +31,6 @@
 
 저장소에 포함된 이 위키는 소프트웨어와 함께 버전 관리됩니다. GitHub 위키에 게시하는 것은 별도 작업입니다.
 
-[설치](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.md)부터 시작한 뒤 [시나리오 v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.md)을 읽으세요. `examples/`의 파일 4개를 실행하세요. 통과 보고서를 해석하기 전에 [제한](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.md)을 읽으세요. 통과는 실제 HA 엔진의 합성 서비스 전달을 설명하며 물리적 기기를 설명하지 않습니다.
+[설치](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/install.ko.md)부터 시작한 뒤 [시나리오 v1](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/scenarios.ko.md)을 읽으세요. `examples/`의 파일 4개를 실행하세요. 통과 보고서를 해석하기 전에 [제한](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/limits.ko.md)을 읽으세요. 통과는 실제 HA 엔진의 합성 서비스 전달을 설명하며 물리적 기기를 설명하지 않습니다.
 
-[문제 해결](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.md) · [검증](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.md)
+[문제 해결](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/troubleshooting.ko.md) · [검증](https://github.com/ha-homelab/ha-scenario-tests/blob/main/docs/validation.ko.md)
