@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "languages": "docs/languages.json",
+  "families": [
+    {
+      "source": "docs/install.md",
+      "source_sha256": "682c84d4ac2427a5321e8ac8a115b641baa1c2977a34c536943168adb11e0d48"
+    },
+    {
+      "source": "docs/limits.md",
+      "source_sha256": "71378508c67c792bb980492bc052858b7f3f7512132939ef3e842b9ed3068057"
+    },
+    {
+      "source": "docs/scenarios.md",
+      "source_sha256": "2c3b33a5981e8edce49a769a752212f7dc9b0122acf7499212a9bb96cb8d069d"
+    },
+    {
+      "source": "docs/troubleshooting.md",
+      "source_sha256": "9c51b7676931ef99ff55db59e826fdfba0765d4b1b26d601452e3a967b324674"
+    },
+    {
+      "source": "docs/validation.md",
+      "source_sha256": "c16790aabea1120fc108e243cb9a0cc418328f19bb7a384c71330d8002b6a95c"
+    },
+    {
+      "source": "wiki/Home.md",
+      "source_sha256": "d66f92d744e7a7fe52170c90de68760951fa25e462cb8eb38271645148314ee5"
+    }
+  ]
+}

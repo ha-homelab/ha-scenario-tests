@@ -56,6 +56,9 @@ The function returns a serializable report; pytest supplies JUnit via `--junitxm
 
 ## Documentation
 
+The guides below include complete translations in 24 languages, selectable on
+each page. See [translation maintenance](docs/translations.md) for coverage and updates.
+
 - [Installation and containment](docs/install.md) / [RU](docs/install.ru.md)
 - [Scenario contract](docs/scenarios.md) / [RU](docs/scenarios.ru.md)
 - [Troubleshooting](docs/troubleshooting.md) / [RU](docs/troubleshooting.ru.md)

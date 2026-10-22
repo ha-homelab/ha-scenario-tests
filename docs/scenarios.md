@@ -1,5 +1,34 @@
 # Scenario contract v1
 
+<!-- language-navigation:start -->
+<p dir="ltr">
+<a href="scenarios.md" lang="en" dir="ltr">English</a> ·
+<a href="scenarios.ar.md" lang="ar" dir="rtl">العربية</a> ·
+<a href="scenarios.bn.md" lang="bn" dir="ltr">বাংলা</a> ·
+<a href="scenarios.cs.md" lang="cs" dir="ltr">Čeština</a> ·
+<a href="scenarios.de.md" lang="de" dir="ltr">Deutsch</a> ·
+<a href="scenarios.es.md" lang="es" dir="ltr">Español</a> ·
+<a href="scenarios.fa.md" lang="fa" dir="rtl">فارسی</a> ·
+<a href="scenarios.fr.md" lang="fr" dir="ltr">Français</a> ·
+<a href="scenarios.he.md" lang="he" dir="rtl">עברית</a> ·
+<a href="scenarios.hi.md" lang="hi" dir="ltr">हिन्दी</a> ·
+<a href="scenarios.id.md" lang="id" dir="ltr">Bahasa Indonesia</a> ·
+<a href="scenarios.it.md" lang="it" dir="ltr">Italiano</a> ·
+<a href="scenarios.ja.md" lang="ja" dir="ltr">日本語</a> ·
+<a href="scenarios.ko.md" lang="ko" dir="ltr">한국어</a> ·
+<a href="scenarios.nl.md" lang="nl" dir="ltr">Nederlands</a> ·
+<a href="scenarios.pl.md" lang="pl" dir="ltr">Polski</a> ·
+<a href="scenarios.pt.md" lang="pt" dir="ltr">Português</a> ·
+<a href="scenarios.ru.md" lang="ru" dir="ltr">Русский</a> ·
+<a href="scenarios.th.md" lang="th" dir="ltr">ไทย</a> ·
+<a href="scenarios.tr.md" lang="tr" dir="ltr">Türkçe</a> ·
+<a href="scenarios.uk.md" lang="uk" dir="ltr">Українська</a> ·
+<a href="scenarios.vi.md" lang="vi" dir="ltr">Tiếng Việt</a> ·
+<a href="scenarios.zh-Hans.md" lang="zh-Hans" dir="ltr">简体中文</a> ·
+<a href="scenarios.zh-Hant.md" lang="zh-Hant" dir="ltr">繁體中文</a>
+</p>
+<!-- language-navigation:end -->
+
 The authoritative validator is `src/ha_scenario_tests/schema.py`. JSON only, at most 64 KiB. Unknown keys, duplicate JSON keys, symlink input, non-finite numbers and invalid types are rejected. Do not copy household configuration into public examples.
 
 Required root fields: `schema: "ha-scenario/v1"`, a short lowercase `name`, `seed`, `automations`, `timeline`, `expect`. Optional `settle_seconds` defaults to 0.1. All entity IDs use the `scenario_` prefix and must be declared in the seed. Supported domains: `light`, `switch`, `input_boolean`, `binary_sensor`. Supported states: `on`, `off`, `unknown`, `unavailable`.
