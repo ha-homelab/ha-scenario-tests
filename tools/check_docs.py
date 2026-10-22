@@ -37,7 +37,7 @@ for path in paths:
             errors.append("Invalid SVG " + str(path.relative_to(root)))
     if path.suffix != ".md":
         continue
-    body = path.read_text()
+    body = path.read_text(encoding="utf-8")
     links = re.findall(r'!?\[[^\]]*\]\(([^\s)]+)(?:\s+"[^"]*")?\)', body)
     links += re.findall(r'href="([^"]+)"', body)
     for link in links:
@@ -52,7 +52,9 @@ for path in paths:
         if not target.exists():
             errors.append(str(path.relative_to(root)) + ": broken relative link " + dest)
 # Full guide families are deliberately separate from the existing CLI/README locales.
-NAV = re.compile(r"<!-- language-navigation:start -->.*?<!-- language-navigation:end -->", re.S)
+NAV = re.compile(
+    r"\n*<!-- language-navigation:start -->.*?<!-- language-navigation:end -->\n*", re.S
+)
 FENCE = re.compile(r"^```[^\n]*\n.*?^```", re.M | re.S)
 LINK = re.compile(r"!?\[[^\]]*\]\(([^\s)]+)(?:\s+\"[^\"]*\")?\)")
 EXPECTED = set(
@@ -61,7 +63,8 @@ EXPECTED = set(
 
 
 def content(text):
-    return re.sub(r"\n{3,}", "\n\n", NAV.sub("", text)).strip()
+    """Ignore navigation formatting without altering executable example bytes."""
+    return NAV.sub("\n\n", text).strip()
 
 
 def localized(source, code):
@@ -96,8 +99,8 @@ def structure(text):
     )
 
 
-manifest = json.loads((root / "docs/translations.json").read_text())
-catalog = json.loads((root / manifest["languages"]).read_text())
+manifest = json.loads((root / "docs/translations.json").read_text(encoding="utf-8"))
+catalog = json.loads((root / manifest["languages"]).read_text(encoding="utf-8"))
 codes = [item["code"] for item in catalog]
 if len(codes) != 24 or set(codes) != EXPECTED:
     errors.append("Documentation catalog must contain each of the 24 reference languages once")
@@ -112,7 +115,7 @@ for family in manifest["families"]:
     if not source.is_file():
         errors.append("Missing source: " + family["source"])
         continue
-    original = content(source.read_text())
+    original = content(source.read_text(encoding="utf-8"))
     if hashlib.sha256(original.encode()).hexdigest() != family["source_sha256"]:
         errors.append(
             f"{family['source']}: English changed; review all translations and update digest"
@@ -123,7 +126,7 @@ for family in manifest["families"]:
         if not target.is_file():
             errors.append("Missing translation: " + str(target.relative_to(root)))
             continue
-        text = target.read_text()
+        text = target.read_text(encoding="utf-8")
         name = str(target.relative_to(root))
         navs = NAV.findall(text)
         expected_links = [
