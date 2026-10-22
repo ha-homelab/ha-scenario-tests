@@ -27,7 +27,9 @@ When changing a source guide:
    page. It must link to all entries in the catalog, including the current page.
 4. Update the source digest in [`translations.json`](translations.json) only
    after reviewing the translations. It is SHA-256 of the UTF-8 English content,
-   with the navigation block removed and leading/trailing whitespace stripped.
+   with the navigation block and adjacent newlines replaced by one blank line,
+   then leading/trailing whitespace stripped. All other whitespace, including
+   blank lines inside executable examples, remains significant.
 5. Stage new files, then run `python3 tools/check_docs.py` and
    `ruff check --select E4,E7,E9,F tools/check_docs.py`. The existing Check workflow
    runs the documentation check; no separate translation service is involved.

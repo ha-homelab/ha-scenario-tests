@@ -52,7 +52,7 @@ for path in paths:
         if not target.exists():
             errors.append(str(path.relative_to(root)) + ": broken relative link " + dest)
 # Full guide families are deliberately separate from the existing CLI/README locales.
-NAV = re.compile(r"<!-- language-navigation:start -->.*?<!-- language-navigation:end -->", re.S)
+NAV = re.compile(r"\n*<!-- language-navigation:start -->.*?<!-- language-navigation:end -->\n*", re.S)
 FENCE = re.compile(r"^```[^\n]*\n.*?^```", re.M | re.S)
 LINK = re.compile(r"!?\[[^\]]*\]\(([^\s)]+)(?:\s+\"[^\"]*\")?\)")
 EXPECTED = set(
@@ -61,7 +61,8 @@ EXPECTED = set(
 
 
 def content(text):
-    return re.sub(r"\n{3,}", "\n\n", NAV.sub("", text)).strip()
+    """Ignore navigation formatting without altering executable example bytes."""
+    return NAV.sub("\n\n", text).strip()
 
 
 def localized(source, code):
