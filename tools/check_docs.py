@@ -6,7 +6,7 @@ import json
 import re
 import subprocess
 from collections import Counter
-from pathlib import Path
+from pathlib import Path, PurePosixPath
 from urllib.parse import unquote
 from xml.etree import ElementTree as ET
 
@@ -83,8 +83,8 @@ def translated_link(link, source, code):
         return link
     translated = localized(dest, code)
     if link.startswith(prefix):
-        return prefix + str(translated.relative_to(root))
-    return str(Path(link).with_name(translated.name))
+        return prefix + translated.relative_to(root).as_posix()
+    return str(PurePosixPath(link).with_name(translated.name))
 
 
 def structure(text):
