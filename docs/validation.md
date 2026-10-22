@@ -1,5 +1,34 @@
 # Validation record
 
+<!-- language-navigation:start -->
+<p dir="ltr">
+<a href="validation.md" lang="en" dir="ltr">English</a> ·
+<a href="validation.ar.md" lang="ar" dir="rtl">العربية</a> ·
+<a href="validation.bn.md" lang="bn" dir="ltr">বাংলা</a> ·
+<a href="validation.cs.md" lang="cs" dir="ltr">Čeština</a> ·
+<a href="validation.de.md" lang="de" dir="ltr">Deutsch</a> ·
+<a href="validation.es.md" lang="es" dir="ltr">Español</a> ·
+<a href="validation.fa.md" lang="fa" dir="rtl">فارسی</a> ·
+<a href="validation.fr.md" lang="fr" dir="ltr">Français</a> ·
+<a href="validation.he.md" lang="he" dir="rtl">עברית</a> ·
+<a href="validation.hi.md" lang="hi" dir="ltr">हिन्दी</a> ·
+<a href="validation.id.md" lang="id" dir="ltr">Bahasa Indonesia</a> ·
+<a href="validation.it.md" lang="it" dir="ltr">Italiano</a> ·
+<a href="validation.ja.md" lang="ja" dir="ltr">日本語</a> ·
+<a href="validation.ko.md" lang="ko" dir="ltr">한국어</a> ·
+<a href="validation.nl.md" lang="nl" dir="ltr">Nederlands</a> ·
+<a href="validation.pl.md" lang="pl" dir="ltr">Polski</a> ·
+<a href="validation.pt.md" lang="pt" dir="ltr">Português</a> ·
+<a href="validation.ru.md" lang="ru" dir="ltr">Русский</a> ·
+<a href="validation.th.md" lang="th" dir="ltr">ไทย</a> ·
+<a href="validation.tr.md" lang="tr" dir="ltr">Türkçe</a> ·
+<a href="validation.uk.md" lang="uk" dir="ltr">Українська</a> ·
+<a href="validation.vi.md" lang="vi" dir="ltr">Tiếng Việt</a> ·
+<a href="validation.zh-Hans.md" lang="zh-Hans" dir="ltr">简体中文</a> ·
+<a href="validation.zh-Hant.md" lang="zh-Hant" dir="ltr">繁體中文</a>
+</p>
+<!-- language-navigation:end -->
+
 ## 2026-10-15 Linux runtime validation
 
 [GitHub Actions run 38843681199](https://github.com/ha-homelab/ha-scenario-tests/actions/runs/38843681199) passed at commit `0ea7e5a5d24dc89ebe896b1a2387396b3fce18f4`, using CPython 3.14.8 on Ubuntu and pinned Home Assistant 2026.10.0. The full command `python3 -m pytest -q` completed with **54 passed in 21.42s**, with no skipped tests. This includes all seven actual-HA runtime tests: four example scenarios, an intentionally failing expectation/forbidden-action case, the localized CLI JSON report, and the downstream role-transfer contract. Each runtime test starts a fresh controlled worker; expected-failure assertions are tested as failures, not reported as successful scenarios.

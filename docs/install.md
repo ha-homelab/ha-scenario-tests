@@ -1,5 +1,34 @@
 # Installation and containment
 
+<!-- language-navigation:start -->
+<p dir="ltr">
+<a href="install.md" lang="en" dir="ltr">English</a> ·
+<a href="install.ar.md" lang="ar" dir="rtl">العربية</a> ·
+<a href="install.bn.md" lang="bn" dir="ltr">বাংলা</a> ·
+<a href="install.cs.md" lang="cs" dir="ltr">Čeština</a> ·
+<a href="install.de.md" lang="de" dir="ltr">Deutsch</a> ·
+<a href="install.es.md" lang="es" dir="ltr">Español</a> ·
+<a href="install.fa.md" lang="fa" dir="rtl">فارسی</a> ·
+<a href="install.fr.md" lang="fr" dir="ltr">Français</a> ·
+<a href="install.he.md" lang="he" dir="rtl">עברית</a> ·
+<a href="install.hi.md" lang="hi" dir="ltr">हिन्दी</a> ·
+<a href="install.id.md" lang="id" dir="ltr">Bahasa Indonesia</a> ·
+<a href="install.it.md" lang="it" dir="ltr">Italiano</a> ·
+<a href="install.ja.md" lang="ja" dir="ltr">日本語</a> ·
+<a href="install.ko.md" lang="ko" dir="ltr">한국어</a> ·
+<a href="install.nl.md" lang="nl" dir="ltr">Nederlands</a> ·
+<a href="install.pl.md" lang="pl" dir="ltr">Polski</a> ·
+<a href="install.pt.md" lang="pt" dir="ltr">Português</a> ·
+<a href="install.ru.md" lang="ru" dir="ltr">Русский</a> ·
+<a href="install.th.md" lang="th" dir="ltr">ไทย</a> ·
+<a href="install.tr.md" lang="tr" dir="ltr">Türkçe</a> ·
+<a href="install.uk.md" lang="uk" dir="ltr">Українська</a> ·
+<a href="install.vi.md" lang="vi" dir="ltr">Tiếng Việt</a> ·
+<a href="install.zh-Hans.md" lang="zh-Hans" dir="ltr">简体中文</a> ·
+<a href="install.zh-Hant.md" lang="zh-Hant" dir="ltr">繁體中文</a>
+</p>
+<!-- language-navigation:end -->
+
 Use the pinned Home Assistant runtime with Python 3.14.2–3.14.x. Install `requirements.lock` with `--require-hashes`, then install this package using `--no-deps .`, as shown in the root README. The lock covers application and test dependencies. A clean environment is required; do not install into your production Home Assistant environment. Use `pip install --no-deps -e .` instead when editing source.
 
 Run `ha-scenario validate examples/stale_sensor.json` first. Validation imports no HA runtime. Then run `ha-scenario run examples/stale_sensor.json --report result.json`. No target server is configured. The only output path comes from your explicit `--report` argument, not the scenario.
