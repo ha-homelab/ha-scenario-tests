@@ -14,6 +14,8 @@ No pending changes.
   patch version required by the universal lock regeneration command.
 - Verify the built wheel in a fresh Linux environment and preserve its exact
   candidate files in CI for later publication.
+- Include the language catalog and translation manifest in source archives;
+  validate built package contents against the actual source files before upload.
 - Keep the 0.1.1 stable release on hold: Home Assistant 2026.10.3 still requires
   Pillow 12.3.0, while the published security fixes require Pillow 13.0.0.
   Runtime tests do not override that dependency constraint or establish that

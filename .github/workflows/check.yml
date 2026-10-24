@@ -40,6 +40,7 @@ jobs:
           python3 -m pytest -q
           python3 tools/check_docs.py
           python3 -m build --outdir "$RUNNER_TEMP/dist"
+          python3 tools/check_package.py "$RUNNER_TEMP/dist"
       - name: Verify the built wheel in a fresh environment
         run: |
           python3 -m venv "$RUNNER_TEMP/wheel-venv"
