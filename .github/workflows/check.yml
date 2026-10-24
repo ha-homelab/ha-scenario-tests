@@ -40,11 +40,31 @@ jobs:
           python3 -m pytest -q
           python3 tools/check_docs.py
           python3 -m build --outdir "$RUNNER_TEMP/dist"
+      - name: Verify the built wheel in a fresh environment
+        run: |
+          python3 -m venv "$RUNNER_TEMP/wheel-venv"
+          wheel_python="$RUNNER_TEMP/wheel-venv/bin/python"
+          "$wheel_python" -m pip install --require-hashes -r requirements.lock
+          "$wheel_python" -m pip install --no-deps "$RUNNER_TEMP"/dist/*.whl
+          "$wheel_python" -m pip check
+          cd "$RUNNER_TEMP"
+          "$wheel_python" -m pytest -q -m runtime "$GITHUB_WORKSPACE/tests"
+      - name: Hash the accepted package files
+        run: |
+          cd "$RUNNER_TEMP/dist"
+          sha256sum -- *.tar.gz *.whl > SHA256SUMS
       - name: Build and exercise the packaged runtime
         run: |
           docker build --tag ha-scenario-ci .
           docker run --rm --network none --read-only --tmpfs /tmp:rw \
             --cap-drop ALL --security-opt no-new-privileges ha-scenario-ci
+      - name: Preserve accepted release candidate bytes
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: release-candidate-${{ github.sha }}
+          path: ${{ runner.temp }}/dist/
+          if-no-files-found: error
+          retention-days: 14
       - name: Diagnose pinned runtime with synthetic input only
         if: failure()
         run: python3 -X faulthandler -I -m ha_scenario_tests.worker < examples/presence_timeout.json

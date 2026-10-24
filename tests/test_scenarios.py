@@ -25,7 +25,7 @@ def synthetic_success_report(document):
         "name": document["name"],
         "passed": True,
         "failures": [],
-        "ha_version": "2026.10.1",
+        "ha_version": "2026.10.3",
         "clock": "elapsed_monotonic",
         "physical_validation": False,
         "isolation": "fresh_worker_temp_config_python_audit_guard",
@@ -51,7 +51,7 @@ def synthetic_success_report(document):
 def test_real_ha_scenario(path, scenario_runner):
     report = scenario_runner(load(path))
     assert report["passed"], report
-    assert report["ha_version"] == "2026.10.1"
+    assert report["ha_version"] == "2026.10.3"
     assert report["physical_validation"] is False
     assert not report["blocked_io"]
     assert "automation" in report["components"]

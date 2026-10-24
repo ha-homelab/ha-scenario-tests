@@ -6,7 +6,7 @@
 
 [Русский](README.ru.md) · [Deutsch](README.de.md) · [Español](README.es.md)
 
-Run bounded, synthetic household scenarios in the **real Home Assistant 2026.10.1 automation and script engine**. Assert the exact ordered service calls, forbidden calls and final synthetic states. There is no Home Assistant URL, token, device connection or production config input.
+Run bounded, synthetic household scenarios in the **real Home Assistant 2026.10.3 automation and script engine**. Assert the exact ordered service calls, forbidden calls and final synthetic states. There is no Home Assistant URL, token, device connection or production config input.
 
 This is an early, deliberately restricted test runner. It is not a general YAML importer, physical simulator, hardware acceptance test, or OS security sandbox. Its clock uses real elapsed time; a 120 ms test timeout does **not** validate a production 20 minute timer.
 

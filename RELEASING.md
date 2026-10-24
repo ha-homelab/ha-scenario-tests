@@ -29,6 +29,13 @@ include available advisory identifiers and upgrade notes.
 Use semantic versioning; breaking public report/schema behavior requires an
 explicit compatibility decision and documented migration instructions.
 
+The Check workflow installs the built wheel into a fresh hash-locked environment
+and reruns the real-HA integration tests. After the entire workflow passes on the
+selected main-branch commit, download its `release-candidate-<commit>` artifact.
+It contains the exact tested wheel, source archive and `SHA256SUMS`. Verify the
+checksums and publish those bytes rather than rebuilding them on another host.
+An uploaded artifact from a failed or incomplete workflow is not accepted.
+
 Publish the wheel and source archive produced by the same clean source revision,
 plus `SHA256SUMS` containing their SHA-256 hashes. Inspect both archives, install
 the wheel in a fresh environment and check the CLI version and synthetic examples

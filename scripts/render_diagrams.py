@@ -67,7 +67,7 @@ def architecture():
             170,
             "Fresh Python worker",
             [
-                "Home Assistant 2026.10.1",
+                "Home Assistant 2026.10.3",
                 "Real triggers, timers and reload",
                 "In-memory actuator callbacks",
             ],

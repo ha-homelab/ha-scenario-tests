@@ -4,7 +4,22 @@
 
 No pending changes.
 
-## 0.1.1rc1 — 2026-10-24
+## 0.1.1b2 — 2026-10-24
+
+- Update the pinned Home Assistant runtime to 2026.10.3 and regenerate its
+  hash-locked dependencies; preserve the exact upstream requirements and
+  synthetic, isolated execution boundary.
+- Update the build backend to setuptools 84.2.1 for GHSA-xmj3-9gf7-h52w
+  (legacy Windows wheel installation path handling) and document the explicit Python
+  patch version required by the universal lock regeneration command.
+- Verify the built wheel in a fresh Linux environment and preserve its exact
+  candidate files in CI for later publication.
+- Keep the 0.1.1 stable release on hold: Home Assistant 2026.10.3 still requires
+  Pillow 12.3.0, while the published security fixes require Pillow 13.0.0.
+  Runtime tests do not override that dependency constraint or establish that
+  vulnerable image-processing paths are safe. Track resolution in issue #27.
+
+## 0.1.1rc1 preparation — not published
 
 - Package the complete 24-language guides and checked-in wiki sources.
 - Preserve executable examples and source digests in documentation parity checks; read multilingual files explicitly as UTF-8.
