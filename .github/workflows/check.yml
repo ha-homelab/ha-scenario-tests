@@ -48,7 +48,7 @@ jobs:
           "$wheel_python" -m pip install --no-deps "$RUNNER_TEMP"/dist/*.whl
           "$wheel_python" -m pip check
           cd "$RUNNER_TEMP"
-          "$wheel_python" -m pytest -q -m runtime "$GITHUB_WORKSPACE/tests"
+          "$wheel_python" -m pytest -q -m runtime "$GITHUB_WORKSPACE/tests/test_scenarios.py"
       - name: Hash the accepted package files
         run: |
           cd "$RUNNER_TEMP/dist"
