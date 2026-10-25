@@ -13,3 +13,10 @@ updates:
     directory: /
     schedule:
       interval: daily
+    # Python minor/major migrations must update the supported HA runtime and lock
+    # together. Keep patch releases and refreshed image digests enabled.
+    ignore:
+      - dependency-name: python
+        update-types:
+          - version-update:semver-minor
+          - version-update:semver-major
