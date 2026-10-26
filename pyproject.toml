@@ -12,7 +12,7 @@ license = "MIT"
 dependencies = ["homeassistant==2026.10.3"]
 
 [project.optional-dependencies]
-test = ["pytest==9.1.1", "ruff==0.17.1"]
+test = ["pytest==9.1.1", "ruff==0.17.2"]
 
 [project.scripts]
 ha-scenario = "ha_scenario_tests.cli:main"
