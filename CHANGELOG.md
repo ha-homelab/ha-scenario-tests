@@ -4,6 +4,14 @@
 
 No pending changes.
 
+## 0.1.1b3 — 2026-10-31
+
+- Update Home Assistant to 2026.10.4, pytest to 9.2.0 and Ruff to 0.17.3
+  together with the hashed lock and exact worker protocol version.
+- Preserve the isolated runtime checks and update the supported-version labels.
+- Limit the documentation test subprocess environment to required process and
+  Git context so failure diagnostics do not include unrelated host credentials.
+
 ## 0.1.1b2 — 2026-10-24
 
 - Update the pinned Home Assistant runtime to 2026.10.3 and regenerate its
