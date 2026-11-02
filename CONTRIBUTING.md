@@ -27,3 +27,21 @@ open comments before a normal merge. Automated reviews assist this process.
 See [RELEASING.md](RELEASING.md) for build and source-version instructions,
 [GOVERNANCE.md](GOVERNANCE.md) for responsibilities, and
 [ROADMAP.md](ROADMAP.md) for planned work.
+
+
+## Locked package builds
+
+`requirements-build.in` declares the package frontend and backend used by CI
+and the synthetic runtime container. Regenerate its complete artifact hash lock
+against the existing runtime constraints with uv 0.13.4:
+
+```sh
+uv pip compile requirements-build.in --constraint requirements.lock --python-version 3.14.2 --universal --generate-hashes --only-binary=:all: --output-file requirements-build.lock
+```
+
+Install both lockfiles with `--require-hashes` before building. Local source
+installation uses `--no-index --no-deps --no-build-isolation`, and distribution builds use
+`--no-isolation`, so package building cannot silently fetch an unverified backend.
+`tools/check_lock.py` rejects a build lock that differs from `pyproject.toml`.
+The separate wheel-acceptance environment still installs only the runtime lock
+and the newly built wheel.

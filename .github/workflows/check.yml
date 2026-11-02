@@ -30,16 +30,15 @@ jobs:
       - name: Install package and validation tools
         run: |
           python3 tools/check_lock.py
-          python3 -m pip install --require-hashes -r requirements.lock
-          python3 -m pip install --no-deps .
-          python3 -m pip install build==1.3.0
+          python3 -m pip install --require-hashes -r requirements.lock -r requirements-build.lock
+          python3 -m pip install --no-index --no-deps --no-build-isolation .
           python3 -m pip check
       - name: Validate source, examples and translations
         run: |
           python3 -m ruff check --select E4,E7,E9,F src tests tools
           python3 -m pytest -q
           python3 tools/check_docs.py
-          python3 -m build --outdir "$RUNNER_TEMP/dist"
+          python3 -m build --no-isolation --outdir "$RUNNER_TEMP/dist"
           python3 tools/check_package.py "$RUNNER_TEMP/dist"
       - name: Verify the built wheel in a fresh environment
         run: |

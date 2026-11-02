@@ -30,10 +30,19 @@ def check(project, lock):
             )
 
 
+def check_build(project, lock):
+    """Require the offline build environment to match the declared backend."""
+    check({"project": {"dependencies": project["build-system"]["requires"]}}, lock)
+
+
 if __name__ == "__main__":
     root = Path(__file__).resolve().parents[1]
     check(
         tomllib.loads((root / "pyproject.toml").read_text()),
         (root / "requirements.lock").read_text(),
     )
-    print("Runtime and test dependency pins match the lockfile")
+    check_build(
+        tomllib.loads((root / "pyproject.toml").read_text()),
+        (root / "requirements-build.lock").read_text(),
+    )
+    print("Runtime, test and build backend pins match the lockfiles")

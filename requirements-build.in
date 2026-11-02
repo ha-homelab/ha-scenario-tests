@@ -1,0 +1,3 @@
+# Complete local wheel/build frontend environment; backend matches pyproject.toml.
+setuptools==84.2.1
+build==1.3.0

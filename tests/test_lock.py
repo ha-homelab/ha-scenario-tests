@@ -1,7 +1,7 @@
 """Regression: CI must not test an old HA after a metadata-only update."""
 import pytest
 
-from tools.check_lock import check
+from tools.check_lock import check, check_build
 
 
 def project():
@@ -21,3 +21,14 @@ def test_rejects_stale_test_tool_pin():
 
 def test_accepts_current_runtime_and_test_pins():
     check(project(), "homeassistant==2026.10.3 \\\n    --hash=sha256:fixture\npytest==9.1.1\n")
+
+
+def test_rejects_stale_build_backend_pin():
+    with pytest.raises(ValueError, match="Lockfile differs for setuptools"):
+        check_build({"build-system": {"requires": ["setuptools==84.2.1"]}},
+                    "setuptools==84.0.0\n")
+
+
+def test_accepts_current_build_backend_pin():
+    check_build({"build-system": {"requires": ["setuptools==84.2.1"]}},
+                "setuptools==84.2.1\n")
