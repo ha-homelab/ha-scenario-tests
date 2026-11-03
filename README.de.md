@@ -1,6 +1,6 @@
 # HA Scenario Tests
 
-**Paket 0.1.1rc1:** Die isolierte Engine verwendet Home Assistant 2026.11.0b3. Diese Vorababhängigkeit dient synthetischen Softwaretests; sie aktualisiert keine bestehende Home-Assistant-Installation und bestätigt keine Abnahme physischer Geräte.
+**Paket 0.1.1:** Die isolierte Engine verwendet Home Assistant 2026.11.0b3. Diese Vorababhängigkeit dient synthetischen Softwaretests; sie aktualisiert keine bestehende Home-Assistant-Installation und bestätigt keine Abnahme physischer Geräte.
 
 [English](README.md) · [Русский](README.ru.md) · [Español](README.es.md)
 
