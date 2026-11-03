@@ -37,6 +37,14 @@ bound. These observations do not establish a root cause or a complete passing
 macOS suite. Worker limits,
 I/O isolation and behavioral assertions are unchanged.
 
+The complete Linux [Check run 41573711037](https://github.com/ha-homelab/ha-scenario-tests/actions/runs/41573711037)
+passed for dependency source `77641a75061336607815e236ee1d32153de738e3`:
+69 tests in 16.67 seconds, all seven installed-wheel runtime tests in 15.69
+seconds, and the packaged container under `--network none --read-only`, with
+capabilities dropped. CodeQL also passed. This is synthetic software acceptance
+for that exact source; it does not erase the local macOS failures above. The
+versioned release source requires its own complete Check before publication.
+
 The earlier [validation record](validation.md) is historical evidence for its
 specified source and runtime. The new dependency requires its own successful
 full Linux Check workflow, including installed-wheel runtime tests and the

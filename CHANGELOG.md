@@ -2,6 +2,13 @@
 
 ## Unreleased
 
+No pending changes.
+
+## 0.1.1b4 — 2026-11-03
+
+- Include both hashed build-input files in source distributions and reject
+  incomplete source manifests, extra wheel payloads or altered package metadata.
+  Bound archive expansion and reject sparse or special entries before reading.
 - Evaluate the isolated engine with Home Assistant 2026.11.0b3 and its coherent
   hash-locked dependencies, including upstream Pillow 13.0.0 and cryptography
   50.0.2. Do not override upstream requirements or change worker time limits.

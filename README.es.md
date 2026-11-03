@@ -1,6 +1,6 @@
 # HA Scenario Tests
 
-**Versión en desarrollo:** el motor aislado usa Home Assistant 2026.11.0b3. Esta dependencia preliminar sirve para pruebas sintéticas de software; no actualiza una instalación de Home Assistant ni acredita la aceptación de dispositivos físicos.
+**Paquete 0.1.1b4:** el motor aislado usa Home Assistant 2026.11.0b3. Esta dependencia preliminar sirve para pruebas sintéticas de software; no actualiza una instalación de Home Assistant ni acredita la aceptación de dispositivos físicos.
 
 [English](README.md) · [Русский](README.ru.md) · [Deutsch](README.de.md)
 

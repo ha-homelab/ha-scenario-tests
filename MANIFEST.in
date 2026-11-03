@@ -1,4 +1,4 @@
-include README*.md LICENSE CHANGELOG.md SECURITY.md CONTRIBUTING.md version requirements.lock Dockerfile
+include README*.md LICENSE CHANGELOG.md SECURITY.md CONTRIBUTING.md version requirements.lock requirements-build.in requirements-build.lock Dockerfile
 recursive-include docs *.md *.svg *.json
 recursive-include wiki *.md
 recursive-include examples *.json
