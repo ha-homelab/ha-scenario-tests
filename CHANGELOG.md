@@ -4,6 +4,15 @@
 
 No pending changes.
 
+## 0.1.1rc1 — 2026-11-03
+
+- Prepare the first release candidate with the same Home Assistant 2026.11.0b3
+  engine, coherent hash lock and bounded package validation accepted in beta 4.
+- Retain the complete 24-language guides, checked-in wiki sources and executable
+  examples with documentation parity checks.
+- Keep Linux source, installed-wheel and isolated-container acceptance mandatory.
+  The documented local macOS failures and synthetic-only boundary still apply.
+
 ## 0.1.1b4 — 2026-11-03
 
 - Include both hashed build-input files in source distributions and reject
@@ -40,12 +49,6 @@ No pending changes.
   Pillow 12.3.0, while the published security fixes require Pillow 13.0.0.
   Runtime tests do not override that dependency constraint or establish that
   vulnerable image-processing paths are safe. Track resolution in issue #27.
-
-## 0.1.1rc1 preparation — not published
-
-- Package the complete 24-language guides and checked-in wiki sources.
-- Preserve executable examples and source digests in documentation parity checks; read multilingual files explicitly as UTF-8.
-- Retain the beta runtime behavior, dependency pins and offline/synthetic acceptance boundaries.
 
 ## 0.1.1b1 — 2026-10-20
 
