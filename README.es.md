@@ -1,10 +1,10 @@
 # HA Scenario Tests
 
-**Beta 0.1.1b1:** versión preliminar para evaluar el software; no implica la aceptación de dispositivos físicos.
+**Versión en desarrollo:** el motor aislado usa Home Assistant 2026.11.0b3. Esta dependencia preliminar sirve para pruebas sintéticas de software; no actualiza una instalación de Home Assistant ni acredita la aceptación de dispositivos físicos.
 
 [English](README.md) · [Русский](README.ru.md) · [Deutsch](README.de.md)
 
-Ejecuta escenarios sintéticos limitados en el **motor real de automatizaciones y scripts de Home Assistant 2026.10.4**. Comprueba el orden exacto de acciones, las acciones prohibidas y los estados finales. No acepta direcciones, tokens ni configuraciones de una instalación real de HA.
+Ejecuta escenarios sintéticos limitados en el **motor real de automatizaciones y scripts de Home Assistant 2026.11.0b3**. Comprueba el orden exacto de acciones, las acciones prohibidas y los estados finales. No acepta direcciones, tokens ni configuraciones de una instalación real de HA.
 
 Antes de usarlo, consulte el [registro de validación](docs/validation.md): las pruebas completas son un requisito de publicación; allí se documenta un fallo nativo local al finalizar el proceso.
 
