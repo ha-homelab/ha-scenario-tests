@@ -14,6 +14,36 @@ secure-design assurance case, signed release or independent continuity is claime
 English, Russian, German and Spanish CLI catalogs and README entry points are
 maintained with parity checks; detailed translations have their documented scope.
 
+## Home Assistant beta evaluation on 2026-11-03
+
+The development dependency is Home Assistant 2026.11.0b3, with its upstream
+Pillow 13.0.0 and cryptography 50.0.2 requirements preserved in the complete
+hash lock. This package runs the real HA engine in isolated synthetic workers;
+it uses its own `scenario_runner` pytest plugin, not
+`pytest-homeassistant-custom-component`. No deployed HA configuration changes.
+
+The local Python 3.14.7/macOS dependency check passed for 114 installed packages.
+The cryptography backend reported OpenSSL 4.0.3. The source archive and wheel
+passed the package-content checks. A metadata audit of all 126 exact lock pins,
+including dependencies conditional on other platforms, found no known
+vulnerabilities and skipped no packages. This point-in-time result does not
+prove absence of undisclosed flaws. Local runtime validation was not uniformly
+successful: an initial run had a 30-second `manual_override` worker timeout;
+a second full run passed 68 tests but `stale_sensor` returned worker exit 1.
+A separate diagnostic invocation of that scenario passed. A fresh environment
+installed from the built wheel passed five of seven runtime cases;
+`manual_override` and `presence_timeout` reached the same 30-second parent
+bound. These observations do not establish a root cause or a complete passing
+macOS suite. Worker limits,
+I/O isolation and behavioral assertions are unchanged.
+
+The earlier [validation record](validation.md) is historical evidence for its
+specified source and runtime. The new dependency requires its own successful
+full Linux Check workflow, including installed-wheel runtime tests and the
+network-disabled container, before a beta is accepted. A beta dependency or
+local package build alone does not qualify an RC or stable release or close
+[issue #27](https://github.com/ha-homelab/ha-scenario-tests/issues/27).
+
 ## Dependency review on 2026-10-16
 
 CI now uses pytest 9.0.3, which fixes local temporary-directory handling in

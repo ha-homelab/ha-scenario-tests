@@ -2,7 +2,12 @@
 
 ## Unreleased
 
-No pending changes.
+- Evaluate the isolated engine with Home Assistant 2026.11.0b3 and its coherent
+  hash-locked dependencies, including upstream Pillow 13.0.0 and cryptography
+  50.0.2. Do not override upstream requirements or change worker time limits.
+- Correct the README development labels and document the local validation
+  limits. Linux runtime, installed-wheel and container checks remain release
+  gates; issue #27 and RC/stable acceptance remain open.
 
 ## 0.1.1b3 — 2026-10-31
 
