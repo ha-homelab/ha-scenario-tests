@@ -1,6 +1,6 @@
 # HA Scenario Tests
 
-**Package 0.1.1rc1:** the isolated engine uses Home Assistant 2026.11.0b3. This prerelease dependency is for synthetic software evaluation; it does not upgrade a deployed Home Assistant or establish physical device acceptance.
+**Package 0.1.1:** the isolated engine uses Home Assistant 2026.11.0b3. This prerelease dependency is for synthetic software evaluation; it does not upgrade a deployed Home Assistant or establish physical device acceptance.
 
 [![OpenSSF Best Practices](https://www.bestpractices.dev/projects/15567/badge)](https://www.bestpractices.dev/projects/15567)
 

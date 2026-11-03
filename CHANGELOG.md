@@ -4,6 +4,16 @@
 
 No pending changes.
 
+## 0.1.1 — 2026-11-03
+
+- Publish the stable package with the same isolated engine, dependency lock and
+  bounded package checks as 0.1.1rc1. Each stage uses its own fully tested files.
+- The engine intentionally retains upstream Home Assistant 2026.11.0b3 with
+  Pillow 13.0.0 and cryptography 50.0.2. This release is for bounded synthetic
+  scenarios; it does not upgrade a deployed Home Assistant installation.
+- Preserve the documented local macOS limitations and mandatory full Linux
+  source, fresh-wheel and isolated-container acceptance.
+
 ## 0.1.1rc1 — 2026-11-03
 
 - Prepare the first release candidate with the same Home Assistant 2026.11.0b3
