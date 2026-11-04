@@ -4,6 +4,7 @@ import os
 import subprocess
 import sys
 import tomllib
+from itertools import product
 from pathlib import Path
 
 import pytest
@@ -16,6 +17,105 @@ from ha_scenario_tests.schema import InvalidScenario, load, validate
 from ha_scenario_tests.versions import HA_VERSION
 
 ROOT = Path(__file__).resolve().parents[1]
+
+
+def test_generated_nested_shapes_fail_without_mutating_input():
+    """Exercise the pure validator; never create a worker or execute HA."""
+    seed = json.loads((ROOT / "examples/presence_timeout.json").read_text())
+
+    def paths(value, prefix=()):
+        yield prefix
+        if isinstance(value, dict):
+            for key, child in value.items():
+                yield from paths(child, prefix + (key,))
+        elif isinstance(value, list):
+            for index, child in enumerate(value):
+                yield from paths(child, prefix + (index,))
+
+    for path, replacement in product(paths(seed), (None, [], {})):
+        # These collections may legitimately be empty in an admitted scenario.
+        if replacement == [] and (
+            path in (("timeline",), ("expect", "calls"), ("expect", "forbidden"))
+            or (len(path) == 3 and path[0] == "automations" and path[2] == "conditions")
+        ):
+            continue
+        if replacement == {} and path == ("expect", "states"):
+            continue
+        document = copy.deepcopy(seed)
+        if path:
+            parent = document
+            for part in path[:-1]:
+                parent = parent[part]
+            parent[path[-1]] = copy.deepcopy(replacement)
+        else:
+            document = copy.deepcopy(replacement)
+        before = copy.deepcopy(document)
+        with pytest.raises(InvalidScenario) as first:
+            validate(document)
+        with pytest.raises(InvalidScenario) as second:
+            validate(document)
+        assert str(first.value) == str(second.value), path
+        assert document == before, path
+
+
+def test_generated_admitted_language_is_deterministic_and_unchanged():
+    """Admission is not an assertion that a scenario ran or its actions passed."""
+    for domain, verb, mode, trigger_kind, operation in product(
+        ("light", "switch", "input_boolean"),
+        ("turn_on", "turn_off", "toggle"),
+        ("single", "restart"),
+        ("state", "event"),
+        ("set", "event", "reload"),
+    ):
+        target = f"{domain}.scenario_target"
+        action = {"action": f"{domain}.{verb}", "entity_id": target}
+        trigger = (
+            {"trigger": "state", "entity_id": target, "to": "on", "for_seconds": 0}
+            if trigger_kind == "state"
+            else {"trigger": "event", "event_type": "scenario_event"}
+        )
+        step = {"after": 0}
+        step[operation] = {
+            "set": {"entity_id": target, "state": "off"},
+            "event": "scenario_event",
+            "reload": True,
+        }[operation]
+        document = {
+            "schema": "ha-scenario/v1",
+            "name": "generated",
+            "seed": {target: "off"},
+            "automations": [
+                {
+                    "id": "generated",
+                    "mode": mode,
+                    "triggers": [trigger],
+                    "conditions": [],
+                    "actions": [action],
+                }
+            ],
+            "timeline": [step],
+            "expect": {"calls": [], "forbidden": [], "states": {}},
+            "settle_seconds": 0,
+        }
+        before = copy.deepcopy(document)
+        assert validate(document) == before
+        assert validate(json.loads(json.dumps(document, allow_nan=False))) == before
+        assert document == before
+
+
+def test_generated_duration_pairs_enforce_the_cumulative_limit():
+    seed = json.loads((ROOT / "examples/presence_timeout.json").read_text())
+    for after, settle in product((0, 2.5, 5), (0, 0.000001, 2.5, 5)):
+        document = copy.deepcopy(seed)
+        document["timeline"] = [{"after": after, "event": "scenario_event"}]
+        document["settle_seconds"] = settle
+        before = copy.deepcopy(document)
+        if after + settle <= 5:
+            assert validate(document) == before
+        else:
+            with pytest.raises(InvalidScenario, match="timeline.total_duration"):
+                validate(document)
+        assert document == before
 
 
 def synthetic_success_report(document):
