@@ -18,7 +18,8 @@
     "**/tools/browser-compatibility/**",
     ".github/cosign/**",
     "requirements-build.lock",
-    "requirements.lock"
+    "requirements.lock",
+    "pyproject.toml"
   ],
   "packageRules": [
     {
@@ -68,6 +69,17 @@
       "matchFileNames": [
         "requirements-build.lock",
         "requirements.lock"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "These source inputs must change together with their generated locks through the documented regeneration command; the pinned native manager cannot preserve those lock command flags.",
+      "matchManagers": [
+        "pip_requirements",
+        "pep621"
+      ],
+      "matchFileNames": [
+        "pyproject.toml"
       ],
       "enabled": false
     }
