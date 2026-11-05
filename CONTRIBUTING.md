@@ -36,7 +36,7 @@ and the synthetic runtime container. Regenerate its complete artifact hash lock
 against the existing runtime constraints with uv 0.13.4:
 
 ```sh
-uv pip compile requirements-build.in --constraint requirements.lock --python-version 3.14.2 --universal --generate-hashes --only-binary=:all: --output-file requirements-build.lock
+uv pip compile .github/requirements-wheels-only.in requirements-build.in --constraint=requirements.lock --python-version=3.14.2 --universal --generate-hashes --output-file=requirements-build.lock
 ```
 
 Install both lockfiles with `--require-hashes` before building. Local source
@@ -45,3 +45,5 @@ installation uses `--no-index --no-deps --no-build-isolation`, and distribution 
 `tools/check_lock.py` rejects a build lock that differs from `pyproject.toml`.
 The separate wheel-acceptance environment still installs only the runtime lock
 and the newly built wheel.
+
+Renovate regenerates the build-tool lock with its existing runtime constraint. The `setuptools` backend stays on the manual runtime update path because it must equal `pyproject.toml` exactly; independent build frontend updates remain automated.

@@ -9,6 +9,7 @@
     "custom.jsonata",
     "dockerfile",
     "pep621",
+    "pip-compile",
     "pip_requirements"
   ],
   "ignorePaths": [
@@ -17,7 +18,6 @@
     "**/fixtures/**",
     "**/tools/browser-compatibility/**",
     ".github/cosign/**",
-    "requirements-build.lock",
     "requirements.lock",
     "pyproject.toml"
   ],
@@ -25,7 +25,8 @@
     {
       "matchManagers": [
         "pep621",
-        "pip_requirements"
+        "pip_requirements",
+        "pip-compile"
       ],
       "matchFileNames": [
         "/^[^/]+$/"
@@ -62,13 +63,37 @@
       "enabled": false
     },
     {
+      "description": "Regenerate compiled locks with their recorded source command; avoid independent edits to inputs or output snapshots.",
+      "matchManagers": [
+        "pip_requirements"
+      ],
+      "matchFileNames": [
+        ".github/requirements-wheels-only.in",
+        "requirements-build.in",
+        "requirements-build.lock"
+      ],
+      "enabled": false
+    },
+    {
       "description": "These generated locks use compile flags unsupported by the pinned Renovate parser; regenerate them through the documented source workflow.",
       "matchManagers": [
         "pip_requirements"
       ],
       "matchFileNames": [
-        "requirements-build.lock",
         "requirements.lock"
+      ],
+      "enabled": false
+    },
+    {
+      "description": "The build backend must match the manually regenerated root pyproject; independent build frontend updates remain native.",
+      "matchManagers": [
+        "pip-compile"
+      ],
+      "matchFileNames": [
+        "requirements-build.in"
+      ],
+      "matchPackageNames": [
+        "setuptools"
       ],
       "enabled": false
     },
@@ -87,6 +112,23 @@
   "pip_requirements": {
     "managerFilePatterns": [
       "/(^|/)([^/]*[-_])?requirements[^/]*\\.(txt|pip)$/"
+    ],
+    "ignorePaths": [
+      "**/vendor/**",
+      "**/node_modules/**",
+      "**/fixtures/**",
+      "**/tools/browser-compatibility/**",
+      ".github/cosign/**",
+      "requirements.lock",
+      "pyproject.toml",
+      ".github/requirements-wheels-only.in",
+      "requirements-build.in",
+      "requirements-build.lock"
+    ]
+  },
+  "pip-compile": {
+    "managerFilePatterns": [
+      "/^requirements\\-build\\.lock$/"
     ]
   },
   "vulnerabilityAlerts": {
