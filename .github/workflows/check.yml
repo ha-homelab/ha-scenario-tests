@@ -11,8 +11,8 @@ jobs:
     uses: victron-venus/venus-os-ci-toolkit/.github/workflows/change-scope.yml@e71559f44e41f39ad0037bf13c7f43bbbb2ec9af # main
     with:
       force-full: false
-      # Declared package inputs in pyproject.toml and MANIFEST.in require full validation.
-      required-paths: "[\"CHANGELOG.md\",\"CODE_OF_CONDUCT.md\",\"CONTRIBUTING.md\",\"GOVERNANCE.md\",\"README.md\",\"RELEASING.md\",\"ROADMAP.md\",\"SECURITY.md\"]"
+      # README.md is semantic package metadata; ordinary archive copies remain documentation-scoped.
+      required-paths: '["README.md"]'
       documentation-paths: "[\"README.de.md\",\"README.es.md\",\"README.ru.md\",\"wiki/Home.ar.md\",\"wiki/Home.bn.md\",\"wiki/Home.cs.md\",\"wiki/Home.de.md\",\"wiki/Home.es.md\",\"wiki/Home.fa.md\",\"wiki/Home.fr.md\",\"wiki/Home.he.md\",\"wiki/Home.hi.md\",\"wiki/Home.id.md\",\"wiki/Home.it.md\",\"wiki/Home.ja.md\",\"wiki/Home.ko.md\",\"wiki/Home.md\",\"wiki/Home.nl.md\",\"wiki/Home.pl.md\",\"wiki/Home.pt.md\",\"wiki/Home.ru.md\",\"wiki/Home.th.md\",\"wiki/Home.tr.md\",\"wiki/Home.uk.md\",\"wiki/Home.vi.md\",\"wiki/Home.zh-Hans.md\",\"wiki/Home.zh-Hant.md\",\"wiki/_Sidebar.md\"]"
   validation:
     needs: scope
