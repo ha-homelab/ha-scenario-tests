@@ -13,7 +13,7 @@ jobs:
       force-full: false
       # README.md is semantic package metadata; ordinary archive copies remain documentation-scoped.
       required-paths: '["README.md"]'
-      documentation-paths: "[\"README.de.md\",\"README.es.md\",\"README.ru.md\",\"wiki/Home.ar.md\",\"wiki/Home.bn.md\",\"wiki/Home.cs.md\",\"wiki/Home.de.md\",\"wiki/Home.es.md\",\"wiki/Home.fa.md\",\"wiki/Home.fr.md\",\"wiki/Home.he.md\",\"wiki/Home.hi.md\",\"wiki/Home.id.md\",\"wiki/Home.it.md\",\"wiki/Home.ja.md\",\"wiki/Home.ko.md\",\"wiki/Home.md\",\"wiki/Home.nl.md\",\"wiki/Home.pl.md\",\"wiki/Home.pt.md\",\"wiki/Home.ru.md\",\"wiki/Home.th.md\",\"wiki/Home.tr.md\",\"wiki/Home.uk.md\",\"wiki/Home.vi.md\",\"wiki/Home.zh-Hans.md\",\"wiki/Home.zh-Hant.md\",\"wiki/_Sidebar.md\"]"
+      documentation-paths: "[\"GOVERNANCE.md\", \"README.de.md\", \"README.es.md\", \"README.ru.md\", \"ROADMAP.md\", \"wiki/Home.ar.md\", \"wiki/Home.bn.md\", \"wiki/Home.cs.md\", \"wiki/Home.de.md\", \"wiki/Home.es.md\", \"wiki/Home.fa.md\", \"wiki/Home.fr.md\", \"wiki/Home.he.md\", \"wiki/Home.hi.md\", \"wiki/Home.id.md\", \"wiki/Home.it.md\", \"wiki/Home.ja.md\", \"wiki/Home.ko.md\", \"wiki/Home.md\", \"wiki/Home.nl.md\", \"wiki/Home.pl.md\", \"wiki/Home.pt.md\", \"wiki/Home.ru.md\", \"wiki/Home.th.md\", \"wiki/Home.tr.md\", \"wiki/Home.uk.md\", \"wiki/Home.vi.md\", \"wiki/Home.zh-Hans.md\", \"wiki/Home.zh-Hant.md\", \"wiki/_Sidebar.md\"]"
   validation:
     needs: scope
     if: ${{ needs.scope.outputs.run == 'true' }}
