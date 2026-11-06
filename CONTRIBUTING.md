@@ -47,3 +47,30 @@ The separate wheel-acceptance environment still installs only the runtime lock
 and the newly built wheel.
 
 Renovate regenerates the build-tool lock with its existing runtime constraint. The `setuptools` backend stays on the manual runtime update path because it must equal `pyproject.toml` exactly; independent build frontend updates remain automated.
+
+## Security fixes for manually maintained locks
+
+For a direct or transitive advisory in the manually maintained environment,
+identify the affected package and the advisory's fixed version range. A plain
+lock regeneration may retain the existing transitive pin. Replace
+`AFFECTED_PACKAGE` below with the advisory's package name and request its update
+explicitly in the existing reviewed build environment:
+
+```sh
+uv pip compile pyproject.toml --extra test --python-version 3.14.7 --universal --generate-hashes --no-python-downloads -o requirements.lock --upgrade-package AFFECTED_PACKAGE
+```
+
+Review any direct or parent constraint that prevents selection of a fixed
+release; qualify that constraint change together with the lock. Preserve the
+documented interpreter, platform, hash and build-isolation requirements.
+Check the resulting affected-package versions against the advisory's affected
+and fixed ranges in every applicable Python/platform marker branch and every
+coupled lock or export. A successful resolver exit alone is not proof of a fix.
+If no compatible fixed resolution exists, keep the advisory open and document
+the blocker instead of marking it remediated.
+
+Keep the fixed Python version and `--no-python-downloads` requirement. Regenerate `requirements-build.lock` afterward with the documented runtime constraint. If the backend changes, update the exact `setuptools` pins in `pyproject.toml` and `requirements-build.in` together and run `tools/check_lock.py` plus the full real-HA runtime suite.
+
+Run the repository's complete existing dependency, runtime and CI qualification
+before merging the source constraints and generated files together. GitHub
+vulnerability alerts remain enabled for these manually maintained units.
